@@ -42,6 +42,7 @@
     "simple-line-icons": "^2.4.1"
   },
   "devDependencies": {
+    "@svelte-material-ui/drawer": "^1.0.0-beta.6",
     "react-scripts": "^2.1.8"
   },
   "scripts": {

@@ -4,6 +4,7 @@ import './App.css';
 import HeaderMenu from "./component/HeaderMenu";
 import Header from "./component/Header";
 import MainContent from "./component/MainContent";
+import DashboardRouter from "./route/router-dashboard";
 
 class App extends React.Component
 {
@@ -14,8 +15,7 @@ class App extends React.Component
         return (
             <div>
                 <Provider store={store}>
-                    <HeaderMenu/>
-                    <Header/>
+                    {/*<DashboardRouter/>*/}
                     <MainContent/>
                 </Provider>
             </div>

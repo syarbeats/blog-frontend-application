@@ -10,6 +10,7 @@ import RegisterSuccess from '../component/RegisterSuccess'
 import RegisterFailed from '../component/RegisterFailed'
 import ResetPassword from "../component/ResetPassword";
 import CheckEmail from '../component/CheckEmail'
+import CreateBlog from "../component/blog/CreateBlog";
 
 function AppRouter() {
     return (
@@ -25,6 +26,7 @@ function AppRouter() {
                     <Route path="/checkemail" exact component = {CheckEmail} />
                     <Route path="/user/register" exact component = {RegisterUser} />
                     <AuthenticatedRoute path="/user/list" exact component={UserList} />
+                    <AuthenticatedRoute path="/blog/create" exact component={CreateBlog} />
                 </Switch>
             </Router>
         </div>

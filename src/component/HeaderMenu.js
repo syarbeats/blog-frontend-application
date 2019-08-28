@@ -28,7 +28,7 @@ class HeaderMenu extends React.Component{
                                     <button type="button" className="btn btn-success">Logout</button></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/post-blog">
+                                <a className="nav-link" href="/blog/create">
                                     <button type="button" className="btn btn-success">Create Blog</button></a>
                             </li>
                             <li className="nav-item active">
