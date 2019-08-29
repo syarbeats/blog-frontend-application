@@ -58,7 +58,7 @@ class LoginComponent extends Component {
                 console.log("TOKEN:", JSON.stringify(json.data.token));
                 console.log("Response:", JSON.stringify(json));
                 ProxyServices.registerSuccessfulLogin(this.state.formControls.username.value, this.state.formControls.password.value, json.data.token);
-                this.props.history.push("/user/list")
+                this.props.history.push("/blog/create")
             }).catch(() => {
             this.setState({showSuccessMessage: false})
             this.setState({hasLoginFailed: true})
