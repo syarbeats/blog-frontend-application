@@ -11,6 +11,7 @@ import RegisterFailed from '../component/RegisterFailed'
 import ResetPassword from "../component/ResetPassword";
 import CheckEmail from '../component/CheckEmail'
 import CreateBlog from "../component/blog/CreateBlog";
+import Blog from "../component/blog/Blog";
 
 function AppRouter() {
     return (
@@ -25,6 +26,7 @@ function AppRouter() {
                     <Route path="/reset" exact component = {ResetPassword} />
                     <Route path="/checkemail" exact component = {CheckEmail} />
                     <Route path="/user/register" exact component = {RegisterUser} />
+                    <Route path="/blog" exact component = {Blog} />
                     <AuthenticatedRoute path="/user/list" exact component={UserList} />
                     <AuthenticatedRoute path="/blog/create" exact component={CreateBlog} />
                 </Switch>
