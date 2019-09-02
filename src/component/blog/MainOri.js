@@ -1,17 +1,8 @@
 import React from 'react';
 import Dropdown from '../../component/dropdownmenu/CategoryDropdown';
 import EditorComponent from "./Editor";
-import ProxyServices from '../../Service/ProxyServices';
 
 class Main extends React.Component{
-
-    constructor(props){
-        super(props);
-        this.state = {
-            blogs: []
-        }
-
-    }
 
     render() {
         return(
