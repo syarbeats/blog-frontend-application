@@ -81,6 +81,26 @@ class ProxyServices {
         }
     }
 
+    getCategoryList(){
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL2}/api/categories`);
+    }
+
+    submitBlog(payload){
+        console.log("Payload:"+JSON.stringify( payload ));
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.post(`${API_URL2}/api/posts`, payload);
+
+    }
+
 }
 
 export default new ProxyServices()
