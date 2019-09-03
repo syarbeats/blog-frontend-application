@@ -33,7 +33,7 @@ class UserList extends React.Component{
                             <tbody>
                             <tr>
                                 <th>USERNAME</th>
-                                <th>PASSWORD</th>
+                                {/*<th>PASSWORD</th>*/}
                                 <th>EMAIL</th>
                                 <th>ROLE</th>
                                 <th>STATUS</th>
@@ -57,9 +57,9 @@ class TableRow extends React.Component{
         return (
             <tr>
                 <td>{this.props.data.username}</td>
-                <td>{this.props.data.password}</td>
+                {/*<td>{this.props.data.password}</td>*/}
                 <td>{this.props.data.email}</td>
-                <td>{this.props.data.role}</td>
+                <td>{this.props.data.roles}</td>
                 <td>{JSON.stringify(this.props.data.enabled)}</td>
                 <td><Link to={'/user/edit/'+this.props.data.username} className="btn btn-info" >Edit</Link></td>
                 <td><Link to={'/user/delete/'+this.props.data.username} className="btn btn-info">Delete</Link></td>

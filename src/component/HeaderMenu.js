@@ -18,8 +18,22 @@ class HeaderMenu extends React.Component{
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav mr-auto" >
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/">
+                                    <button type="button" className="btn btn-success">Home</button><span className="sr-only">(current)</span></a>
+                            </li>
                             <li className="nav-item">
+                                <a className="nav-link" href="/blog/create">
+                                    <button type="button" className="btn btn-success">Create Blog</button></a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/user/list">
+                                    <button type="button" className="btn btn-success">Show User List</button></a>
+                            </li>
+                        </ul>
+                        <ul className="navbar-nav">
+                            <li className="nav-item" style={{}}>
                                 <a className="nav-link" href="/login">
                                     <button type="button" className="btn btn-success">Login</button></a>
                             </li>
@@ -28,20 +42,8 @@ class HeaderMenu extends React.Component{
                                     <button type="button" className="btn btn-success">Logout</button></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/blog/create">
-                                    <button type="button" className="btn btn-success">Create Blog</button></a>
-                            </li>
-                            <li className="nav-item active">
-                                <a className="nav-link" href="/">
-                                    <button type="button" className="btn btn-primary">Home</button><span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="nav-item">
                                 <a className="nav-link" href="/user/register">
-                                    <button type="button" className="btn btn-secondary">Register User</button></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/user/list">
-                                    <button type="button" className="btn btn-success">Show User List</button></a>
+                                    <button type="button" className="btn btn-success">Sign Up</button></a>
                             </li>
                         </ul>
                     </div>
