@@ -28,6 +28,14 @@ class HeaderMenu extends React.Component{
                                     <button type="button" className="btn btn-success">Create Blog</button></a>
                             </li>
                             <li className="nav-item">
+                                <a className="nav-link" href="/category/create">
+                                    <button type="button" className="btn btn-success">Create Blog Category</button></a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/category/list">
+                                    <button type="button" className="btn btn-success">Category List</button></a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link" href="/user/list">
                                     <button type="button" className="btn btn-success">Show User List</button></a>
                             </li>

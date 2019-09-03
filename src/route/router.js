@@ -12,6 +12,8 @@ import ResetPassword from "../component/ResetPassword";
 import CheckEmail from '../component/CheckEmail'
 import CreateBlog from "../component/blog/CreateBlog";
 import Blog from "../component/blog/Blog";
+import CreateCategory from "../component/category/CreateCategory";
+import CategoryList from "../component/category/CategoryList";
 
 function AppRouter() {
     return (
@@ -20,6 +22,8 @@ function AppRouter() {
                 <Switch>
                     <Route path="/" exact component = {Index} />
                     <Route path="/home" exact component = {Index} />
+                    <Route path="/category/create" exact component = {CreateCategory} />
+                    <Route path="/category/list" exact component = {CategoryList} />
                     <Route path="/register-successfully" exact component = {RegisterSuccess}/>
                     <Route path="/register-failed" exact component = {RegisterFailed}/>
                     <Route path="/login" exact component = {Login} />
