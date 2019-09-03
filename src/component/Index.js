@@ -1,26 +1,47 @@
 import React from 'react';
 import Dropdown from '../component/dropdownmenu/CategoryDropdown';
 import ProxyServices from "../Service/ProxyServices";
+import { withRouter } from 'react-router-dom';
+import queryString from 'query-string';
+
 
 class Index extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            blogs: []
+            blogs: [],
+            categories: []
         }
 
     }
 
     componentDidMount() {
-        ProxyServices.getBlogList("")
-            .then(response => response.data)
-            .then((json) => {
-                console.log("Response:", JSON.stringify(json));
-                this.setState({blogs: json});
-                console.log("BLOGS:", (this.state.blogs));
-            }).catch(() => {
-        })
+        let params = queryString.parse(this.props.location.search);
+        console.log("PARAMS:",params.category);
+
+        if(params.category){
+            ProxyServices.getBlogList(params.category)
+                .then(response => response.data)
+                .then((json) => {
+                    console.log("Response:", JSON.stringify(json));
+                    this.setState({blogs: json});
+                    console.log("BLOGS:", (this.state.blogs));
+                }).catch(() => {
+            })
+        }else{
+            ProxyServices.getBlogList("")
+                .then(response => response.data)
+                .then((json) => {
+                    console.log("Response:", JSON.stringify(json));
+                    this.setState({blogs: json});
+                    console.log("BLOGS:", (this.state.blogs));
+                }).catch(() => {
+            })
+        }
+
+
+
     }
 
     render() {
@@ -61,7 +82,7 @@ class Index extends React.Component{
     }
 }
 
-export default Index;
+export default withRouter(Index);
 
 class BlogData extends React.Component{
     render() {
