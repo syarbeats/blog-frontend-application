@@ -24,7 +24,7 @@ class CategoryList extends React.Component{
     render() {
         return(
             <div className="container" style={{marginTop:'100px'}}>
-                <div>
+                <div className="row">
                     <div className="card">
                         <table className="table table-striped">
                             <tbody>

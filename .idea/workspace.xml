@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c7eaeb-4ec9-4df4-a427-010cbb6a4319" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/category/CategoryList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/category/CreateCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/category/LeftMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/category/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/category/SideBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProxyServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProxyServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HeaderMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HeaderMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/category/CategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/category/CategoryList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/category/CreateCategory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="425">
               <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -39,8 +31,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="-262">
               <caret line="111" column="64" selection-start-line="110" selection-start-column="27" selection-end-line="111" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/Index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="70" column="30" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="70" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -89,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/category/CategoryList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="126">
+              <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -102,15 +106,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/category/LeftMenu.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/category/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+            <state relative-caret-position="221">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="59" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -121,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/CreateBlog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="18" selection-end-line="28" />
+            <state relative-caret-position="119">
+              <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="58" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -204,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
         <option value="$PROJECT_DIR$/src/component/HeaderMenu.js" />
         <option value="$PROJECT_DIR$/src/route/router.js" />
-        <option value="$PROJECT_DIR$/src/component/category/CategoryList.js" />
         <option value="$PROJECT_DIR$/src/component/category/Main.js" />
+        <option value="$PROJECT_DIR$/src/component/category/CategoryList.js" />
       </list>
     </option>
   </component>
@@ -363,7 +362,7 @@
       <workItem from="1567385258683" duration="14922000" />
       <workItem from="1567468471749" duration="3057000" />
       <workItem from="1567479188013" duration="2870000" />
-      <workItem from="1567488410704" duration="3903000" />
+      <workItem from="1567488410704" duration="5361000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -400,11 +399,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567414033192</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add functionality to create blog category.">
+      <created>1567494280219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567494280219</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130033000" />
+    <option name="totallyTimeSpent" value="131491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1288" height="680" extended-state="0" />
@@ -438,7 +444,8 @@
     <MESSAGE value="Add Create Blog Layout" />
     <MESSAGE value="Retrieve blog data from backend and display it on Home Page." />
     <MESSAGE value="Add functionality to submit blog to backend." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add functionality to submit blog to backend." />
+    <MESSAGE value="Add functionality to create blog category." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functionality to create blog category." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/component/RegisterFailed.js">
@@ -719,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/blog/LeftMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -742,16 +739,6 @@
     <entry file="file://$PROJECT_DIR$/src/component/category/LeftMenu.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/blog/CreateBlog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="18" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/category/SideBar.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -761,16 +748,6 @@
           <caret line="93" column="5" lean-forward="true" selection-start-line="86" selection-start-column="4" selection-end-line="93" selection-end-column="5" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/blog/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="111" column="64" selection-start-line="110" selection-start-column="27" selection-end-line="111" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,20 +772,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/category/CategoryList.js">
+    <entry file="file://$PROJECT_DIR$/src/component/category/CreateCategory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/category/CreateCategory.js">
+    <entry file="file://$PROJECT_DIR$/src/component/blog/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="-262">
+          <caret line="111" column="64" selection-start-line="110" selection-start-column="27" selection-end-line="111" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="70" column="30" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="70" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/blog/CreateBlog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="58" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -817,8 +814,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/category/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+        <state relative-caret-position="221">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/category/CategoryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
