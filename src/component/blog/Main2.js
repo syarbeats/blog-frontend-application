@@ -34,7 +34,6 @@ class Main extends React.Component{
 
     onSubmitBlog(event){
         console.log("Category Id:", event.target.key);
-        //event.preventDefault();
 
         if(this.state.title != "" && this.state.category !== "" && this.state.content !== ""){
             let payload = {
@@ -47,12 +46,10 @@ class Main extends React.Component{
             ProxyServices.submitBlog(payload)
                 .then(response => response.data)
                 .then((json) => {
-                    this.props.history.push("/home");
-                    console.log("TOKEN:", JSON.stringify(json.data.token));
                     console.log("Response:", JSON.stringify(json));
-
+                    this.props.history.push("/")
                 }).catch(() => {
-
+                this.setState({showSuccessMessage: false});
             })
         }else{
             this.setState({message: 'please insert all required field'});

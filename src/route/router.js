@@ -19,6 +19,7 @@ function AppRouter() {
             <Router>
                 <Switch>
                     <Route path="/" exact component = {Index} />
+                    <Route path="/home" exact component = {Index} />
                     <Route path="/register-successfully" exact component = {RegisterSuccess}/>
                     <Route path="/register-failed" exact component = {RegisterFailed}/>
                     <Route path="/login" exact component = {Login} />

@@ -17,7 +17,7 @@ class CreateBlog extends React.Component{
                         <LeftMenu/>
                     </div>
                     <div className="col-md-9">
-                        <Main/>
+                        <Main history={this.props.history}/>
                     </div>
                 </div>
             </div>
