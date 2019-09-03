@@ -70,14 +70,17 @@ class ProxyServices {
     }
 
     getBlogList(category){
-        if(category == '' || category == null){
-            let token = this.getToken();
-            console.log("TOKEN SERVICE:", token);
-            axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
-            console.log("Header:", axios.defaults.headers.common);
 
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(category == '' || category == null){
            /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
             return axios.get(`${API_URL2}/api/posts`);
+        }else{
+            return axios.get(`${API_URL2}/api/posts/category?category=`+ category);
         }
     }
 
@@ -98,7 +101,6 @@ class ProxyServices {
         console.log("Header:", axios.defaults.headers.common);
 
         return axios.post(`${API_URL2}/api/posts`, payload);
-
     }
 
 }

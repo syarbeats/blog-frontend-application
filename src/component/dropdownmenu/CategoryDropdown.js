@@ -1,9 +1,29 @@
 import React from 'react'
+import ProxyServices from "../../Service/ProxyServices";
 
 class Dropdown extends React.Component {
-    state = {
-        isOpen: false
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            blogs: [],
+            categories: [],
+            isOpen: false
+
+        }
+        //this.onCategoryOnChange = this.onCategoryOnChange.bind(this);
+
+    }
+
+    componentDidMount() {
+        ProxyServices.getCategoryList()
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({categories: json});
+                console.log("Categories:", (this.state.categories));
+            }).catch(() => {
+        })
+    }
 
     toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
 
@@ -21,19 +41,23 @@ class Dropdown extends React.Component {
                     Category
                 </button>
                 <div className={menuClass} aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#nogo">
-                        Category 1
-                    </a>
-                    <a className="dropdown-item" href="#nogo">
-                        Category 2
-                    </a>
-                    <a className="dropdown-item" href="#nogo">
-                        Category 3
-                    </a>
+                    {this.state.categories.map((data, i) => <CategoryList key = {i} data = {data} />)}
+                    {console.log(this.state.categories)}
                 </div>
             </div>
         );
     }
 }
+
+class CategoryList extends React.Component{
+    render() {
+        return(
+            <a className="dropdown-item" href={"/home?category=" + this.props.data.name}>
+                {this.props.data.name}
+            </a>
+        );
+    }
+}
+
 
 export default Dropdown;
