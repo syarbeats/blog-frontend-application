@@ -3,8 +3,8 @@ import Dropdown from "../dropdownmenu/CategoryDropdown";
 import ProxyServices from "../../Service/ProxyServices";
 import queryString from "query-string";
 import { withRouter } from 'react-router-dom';
-
-
+import BlogComment from './BlogComment';
+import DisplayComment from './DisplayComment';
 
 class Blog extends React.Component{
 
@@ -69,6 +69,16 @@ class Blog extends React.Component{
                                 {this.state.blog.content}
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row"  style={{marginTop:'20px'}}>
+                    <div className="col-md-12">
+                        <DisplayComment/>
+                    </div>
+                </div>
+                <div className="row"  style={{marginTop:'20px'}}>
+                    <div className="col-md-12">
+                        <BlogComment/>
                     </div>
                 </div>
             </div>
