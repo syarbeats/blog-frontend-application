@@ -12,7 +12,9 @@ class Blog extends React.Component{
         super(props);
         this.state = {
             blogs: [],
-            blog: {}
+            blog: {},
+            id : 0,
+            title: ''
         }
 
     }
@@ -26,8 +28,10 @@ class Blog extends React.Component{
                 .then(response => response.data)
                 .then((json) => {
                     console.log("Response:", JSON.stringify(json));
-                    this.setState({blog: json});
+                    this.setState({blog: json, id: json.id, title: json.title});
                     console.log("BLOG:", (this.state.blog));
+                    console.log("BLOG ID:", (this.state.id));
+                    console.log("BLOG TITLE:", (this.state.title));
                 }).catch(() => {
             })
         }
@@ -35,6 +39,12 @@ class Blog extends React.Component{
     }
 
     render() {
+
+        const { id, title } = this.state;
+
+        console.log("ID - Blog:", id);
+        console.log("TITLE  - Blog:", title);
+
         return(
             <div className="container" style={{marginTop:'20px'}}>
                 <div className="row" style={{marginLeft:'20px', marginRight:'20px'}}>
@@ -73,12 +83,13 @@ class Blog extends React.Component{
                 </div>
                 <div className="row"  style={{marginTop:'20px'}}>
                     <div className="col-md-12">
-                        <DisplayComment/>
+                        <DisplayComment title={title} />
                     </div>
                 </div>
                 <div className="row"  style={{marginTop:'20px'}}>
                     <div className="col-md-12">
-                        <BlogComment/>
+
+                        <BlogComment history={this.props.history} id={id} title={title}/>
                     </div>
                 </div>
             </div>
