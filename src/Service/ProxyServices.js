@@ -113,6 +113,42 @@ class ProxyServices {
         return axios.post(`${API_URL2}/api/categories`, payload);
     }
 
+    getBlogByTitle(title){
+
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(title){
+            /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
+            return axios.get(`${API_URL2}/api/post?title=${title}` );
+        }
+    }
+
+    submitComment(payload){
+        console.log("Payload:"+JSON.stringify( payload ));
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.post(`${API_URL2}/api/comments`, payload);
+    }
+
+    getCommentByTitle(title){
+
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(title){
+            /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
+            return axios.get(`${API_URL2}/api/comments-by-title?title=${title}` );
+        }
+    }
+
 }
 
 export default new ProxyServices()

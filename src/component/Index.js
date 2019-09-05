@@ -90,9 +90,9 @@ class BlogData extends React.Component{
                     <div className="col-md-4" style={{marginTop: '20px'}}>
                         <div className="jumbotron" style={{height:'600px'}}>
                             <h1 className="display-4">{this.props.data.title}</h1>
-                            <p className="lead">{this.props.data.content}</p>
+                            <p className="lead">{this.props.data.content.substr(0, 500)}</p>
                             <p className="lead">
-                                <a className="btn btn-primary btn-lg" href="/blog" role="button">Read more</a>
+                                <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
                             </p>
                         </div>
                     </div>

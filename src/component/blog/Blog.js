@@ -1,18 +1,50 @@
 import React from 'react';
 import Dropdown from "../dropdownmenu/CategoryDropdown";
 import ProxyServices from "../../Service/ProxyServices";
+import queryString from "query-string";
+import { withRouter } from 'react-router-dom';
+import BlogComment from './BlogComment';
+import DisplayComment from './DisplayComment';
 
 class Blog extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            blogs: []
+            blogs: [],
+            blog: {},
+            id : 0,
+            title: ''
+        }
+
+    }
+
+    componentDidMount() {
+        let params = queryString.parse(this.props.location.search);
+        console.log("PARAMS:",params.title);
+
+        if(params.title) {
+            ProxyServices.getBlogByTitle(params.title)
+                .then(response => response.data)
+                .then((json) => {
+                    console.log("Response:", JSON.stringify(json));
+                    this.setState({blog: json, id: json.id, title: json.title});
+                    console.log("BLOG:", (this.state.blog));
+                    console.log("BLOG ID:", (this.state.id));
+                    console.log("BLOG TITLE:", (this.state.title));
+                }).catch(() => {
+            })
         }
 
     }
 
     render() {
+
+        const { id, title } = this.state;
+
+        console.log("ID - Blog:", id);
+        console.log("TITLE  - Blog:", title);
+
         return(
             <div className="container" style={{marginTop:'20px'}}>
                 <div className="row" style={{marginLeft:'20px', marginRight:'20px'}}>
@@ -43,45 +75,21 @@ class Blog extends React.Component{
                     <div className="col-md-12">
                         <div className="card">
                             <div className="card-body">
-                                <center><h2>Hello World</h2></center> <br/>
-                                <p>
-                                    Step 3: spot bottlenecks and problems ahead of time
-                                    Who’s carrying the weight
-                                    How much work will be pushed back if a team member calls in sick? What if someone gets pulled in to help on a side project? You need to know which team members have a larger workload, so you can demonstrate who is critical to your release and why, and maintain a back-up plan.
-
-                                    A visual indication of workload per person is critical to keeping a handle on team progress.
-
-                                    For the first Issue Statistics gadget, pick the same project as above, and select to compare stats by Assignee.
-                                    Set ‘Show Resolved Issue Statistics’ to No, because resolved issues aren’t going to affect future progress.
-                                    Which project areas require more effort
-                                    Naturally, some aspects of your project are more important than others. It’s up to you to keep your team working on the right parts: if the rest of the company is focused around onboarding first-time users, but your current work is weighted toward increasing performance with large data sets, you’ve got a problem.
-                                </p>
-                                <p>
-                                    Step 3: spot bottlenecks and problems ahead of time
-                                    Who’s carrying the weight
-                                    How much work will be pushed back if a team member calls in sick? What if someone gets pulled in to help on a side project? You need to know which team members have a larger workload, so you can demonstrate who is critical to your release and why, and maintain a back-up plan.
-
-                                    A visual indication of workload per person is critical to keeping a handle on team progress.
-
-                                    For the first Issue Statistics gadget, pick the same project as above, and select to compare stats by Assignee.
-                                    Set ‘Show Resolved Issue Statistics’ to No, because resolved issues aren’t going to affect future progress.
-                                    Which project areas require more effort
-                                    Naturally, some aspects of your project are more important than others. It’s up to you to keep your team working on the right parts: if the rest of the company is focused around onboarding first-time users, but your current work is weighted toward increasing performance with large data sets, you’ve got a problem.
-                                </p>
-                                <p>
-                                    Step 3: spot bottlenecks and problems ahead of time
-                                    Who’s carrying the weight
-                                    How much work will be pushed back if a team member calls in sick? What if someone gets pulled in to help on a side project? You need to know which team members have a larger workload, so you can demonstrate who is critical to your release and why, and maintain a back-up plan.
-
-                                    A visual indication of workload per person is critical to keeping a handle on team progress.
-
-                                    For the first Issue Statistics gadget, pick the same project as above, and select to compare stats by Assignee.
-                                    Set ‘Show Resolved Issue Statistics’ to No, because resolved issues aren’t going to affect future progress.
-                                    Which project areas require more effort
-                                    Naturally, some aspects of your project are more important than others. It’s up to you to keep your team working on the right parts: if the rest of the company is focused around onboarding first-time users, but your current work is weighted toward increasing performance with large data sets, you’ve got a problem.
-                                </p>
+                                <center><h2>{this.state.blog.title}</h2></center> <br/>
+                                {this.state.blog.content}
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row"  style={{marginTop:'20px'}}>
+                    <div className="col-md-12">
+                        <DisplayComment title={title} />
+                    </div>
+                </div>
+                <div className="row"  style={{marginTop:'20px'}}>
+                    <div className="col-md-12">
+
+                        <BlogComment history={this.props.history} id={id} title={title}/>
                     </div>
                 </div>
             </div>
@@ -89,4 +97,4 @@ class Blog extends React.Component{
     }
 }
 
-export default Blog;
+export default withRouter(Blog);
