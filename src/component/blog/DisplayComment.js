@@ -10,8 +10,9 @@ class InsertComment extends React.Component {
         super(props);
 
         this.state = {
-            editorState: EditorState.createWithContent(ContentState.createFromText('Hello')),
+            editorState: EditorState.createWithContent(ContentState.createFromText('')),
             comment: '',
+            comments: [],
             blogId: '',
             blogTitle: ''
         }
@@ -34,23 +35,25 @@ class InsertComment extends React.Component {
     }
 
     componentDidMount() {
-        ProxyServices.getCommentByTitle("Test Blog")
+       /* ProxyServices.getCommentByTitle("Test Blog")
             .then(response => response.data)
             .then((json) => {
                 console.log("Response:", JSON.stringify(json));
-                this.setState({editorState: EditorState.createWithContent(ContentState.createFromText(json.comment))});
+
             }).catch(() => {
 
-        })
+        })*/
     }
 
     componentWillReceiveProps(newProps){
         //this.setState({editorState: EditorState.createWithContent(ContentState.createFromText(newProps.title))});
-        ProxyServices.getCommentByTitle("Test Blog")
+        ProxyServices.getCommentByTitle(newProps.title)
             .then(response => response.data)
             .then((json) => {
-                console.log("Response:", JSON.stringify(json));
-                this.setState({editorState: EditorState.createWithContent(ContentState.createFromText(json[0].comment + "By "+ json[0].username))});
+                console.log("Response will props:", JSON.stringify(json));
+                //this.setState({comments: json, editorState: EditorState.createWithContent(ContentState.createFromText(json[0].comment + "By "+ json[0].username))});
+                this.setState({comments: json});
+                console.log("COMMENTS will props:", this.state.comments);
             }).catch(() => {
 
         })
@@ -64,8 +67,21 @@ class InsertComment extends React.Component {
                     BLOG COMMENT
                 </div>
                 <div className="card-body">
-                    <Editor editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand}/>
+                    {this.state.comments.map((data, i) => <CommentList key = {i} data = {data} />)}
+                    {console.log("COMMENTS:",this.state.comments)}
                 </div>
+            </div>
+        );
+    }
+}
+
+class CommentList extends React.Component{
+
+    render() {
+        return(
+            <div>
+                {this.props.data.comment} <br/>
+                {this.props.data.username} <hr/>
             </div>
         );
     }
