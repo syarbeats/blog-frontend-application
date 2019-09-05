@@ -67,8 +67,10 @@ class InsertComment extends React.Component {
                     BLOG COMMENT
                 </div>
                 <div className="card-body">
-                    {this.state.comments.map((data, i) => <CommentList key = {i} data = {data} />)}
-                    {console.log("COMMENTS:",this.state.comments)}
+                    <div style={{overflowY:'auto' , height: '300px'}}>
+                        {this.state.comments.map((data, i) => <CommentList key = {i} data = {data} />)}
+                        {console.log("COMMENTS:",this.state.comments)}
+                    </div>
                 </div>
             </div>
         );
@@ -81,7 +83,7 @@ class CommentList extends React.Component{
         return(
             <div>
                 {this.props.data.comment} <br/>
-                {this.props.data.username} <hr/>
+                (<b>{this.props.data.username}</b>) <hr/>
             </div>
         );
     }

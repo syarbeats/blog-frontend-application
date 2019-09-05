@@ -5,7 +5,9 @@ import { mediaBlockRenderer } from "./MediaBlockrenderer";
 import ProxyServices from "../../Service/ProxyServices";
 
 
-export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
+export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser';
+
+
 
 class BlogComment extends React.Component {
 
@@ -149,7 +151,7 @@ class BlogComment extends React.Component {
                                 </i>
                             </button>
                         </div>
-                        <Editor editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand} blockRendererFn={mediaBlockRenderer}  plugins={this.plugins}
+                        <Editor style = {{ maxHeight: '200px', overflow: 'auto'}} editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand} blockRendererFn={mediaBlockRenderer}  plugins={this.plugins}
                                 ref="editor"/>
                     </div>
                     <div className="card-footer">
