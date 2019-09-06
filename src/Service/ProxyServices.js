@@ -12,10 +12,14 @@ export const TOKEN = ''
 class ProxyServices {
 
     executeBasicAuthenticationService(username, password) {
+
         let payload = {
             username: username,
             password: password
         };
+
+        console.log("Payload:", payload);
+
         let basicAuth = btoa(username + ':' + password);
         axios.defaults.headers.common = {'Authorization': `Basic ${basicAuth}`};
 
@@ -73,7 +77,7 @@ class ProxyServices {
 
         let token = this.getToken();
         console.log("TOKEN SERVICE:", token);
-        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        //axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
         console.log("Header:", axios.defaults.headers.common);
 
         if(category == '' || category == null){
