@@ -77,7 +77,7 @@ class LoginComponent extends Component {
                                         <Form>
                                             <h1>Login</h1>
                                             <p className="text-muted"> {this.state.hasLoginFailed && <div id="error" className="alert alert-warning">Invalid Credentials</div>}
-                                                {this.state.showSuccessMessage && <div>Login Sucessful</div>} Sign In to your account</p>
+                                                {this.state.showSuccessMessage} Sign In to your account</p>
                                             <InputGroup className="mb-3">
                                                 <InputGroupAddon addonType="prepend">
                                                     <InputGroupText>
