@@ -52,14 +52,14 @@ class Index extends React.Component{
                         <nav className="navbar navbar-expand-lg navbar-light bg-light">
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto">
-                                    <li className="nav-item active">
+                                    <li id="category-dropdown" className="nav-item active">
                                         <Dropdown/>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/new-posting"><b>New Posting</b></a>
+                                        <a id="new-posting" className="nav-link" href="/new-posting"><b>New Posting</b></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/my-posting"><b>My Posting</b></a>
+                                        <a id="my-posting" className="nav-link" href="/my-posting"><b>My Posting</b></a>
                                     </li>
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
@@ -71,7 +71,7 @@ class Index extends React.Component{
                         </nav>
                     </div>
                 </div>
-                <div className="row" style={{marginLeft:'30px', marginRight:'30px'}}>
+                <div id="data" className="row" style={{marginLeft:'30px', marginRight:'30px'}}>
                     {this.state.blogs.map((data, i) => <BlogData key = {i} data = {data} />)}
                     {console.log(this.state.blogs)}
                 </div>

@@ -14,7 +14,7 @@ class Main extends React.Component{
             blogs: [],
             categories: [],
             category: 'Enterprise Application Integration',
-            categoryId: 0,
+            categoryId: 1,
             title: '',
             content: '',
             date: date,
@@ -131,7 +131,7 @@ class Main extends React.Component{
                         <div className="col-md-1">
                         </div>
                         <div className="col-md-7" style={{marginLeft:'0px'}}>
-                            <button className="btn btn btn-primary" onClick={this.onSubmitBlog}>Submit</button>
+                            <button id="createblog" className="btn btn btn-primary" onClick={this.onSubmitBlog}>Submit</button>
                         </div>
                         <div className="col-md-4" style={{marginLeft:'0px'}}>
                         </div>

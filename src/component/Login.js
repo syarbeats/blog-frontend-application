@@ -58,7 +58,12 @@ class LoginComponent extends Component {
                 console.log("TOKEN:", JSON.stringify(json.data.token));
                 console.log("Response:", JSON.stringify(json));
                 ProxyServices.registerSuccessfulLogin(this.state.formControls.username.value, this.state.formControls.password.value, json.data.token);
-                this.props.history.push("/blog/create")
+                if(this.props.location.state){
+                    this.props.history.push(this.props.location.state);
+                }else{
+                    /*this.props.history.push("/category/create");*/
+                    this.props.history.push("/blog/create");
+                }
             }).catch(() => {
             this.setState({showSuccessMessage: false})
             this.setState({hasLoginFailed: true})
@@ -98,7 +103,7 @@ class LoginComponent extends Component {
                                             </InputGroup>
                                             <Row>
                                                 <Col xs="6">
-                                                    <Button color="primary" className="px-4" onClick={this.loginClicked}>Login</Button>
+                                                    <Button id="submit" color="primary" className="px-4" onClick={this.loginClicked}>Login</Button>
                                                 </Col>
                                                 <Col xs="6" className="text-right">
                                                     <a href="/reset">Reset Password</a>

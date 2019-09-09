@@ -8,6 +8,7 @@ class Main extends React.Component{
         this.state = {
             category: '',
             description: '',
+            message: ''
         }
 
         this.onCategoryOnChange = this.onCategoryOnChange.bind(this);
@@ -85,7 +86,7 @@ class Main extends React.Component{
                         <div className="col-md-1">
                         </div>
                         <div className="col-md-7" style={{marginLeft:'0px'}}>
-                            <button className="btn btn btn-primary" onClick={this.onSubmitBlog}>Create Category</button>
+                            <button id="createcategory" className="btn btn btn-primary" onClick={this.onSubmitBlog}>Create Category</button>
                         </div>
                         <div className="col-md-4" style={{marginLeft:'0px'}}>
                         </div>
