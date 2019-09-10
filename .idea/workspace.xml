@@ -51,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/Index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="39">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/route/router.js" />
         <option value="$PROJECT_DIR$/src/component/blog/Blog.js" />
         <option value="$PROJECT_DIR$/src/component/blog/NewPosting.js" />
-        <option value="$PROJECT_DIR$/src/component/Index.js" />
         <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
+        <option value="$PROJECT_DIR$/src/component/Index.js" />
       </list>
     </option>
   </component>
@@ -335,7 +335,7 @@
       <workItem from="1567732945443" duration="332000" />
       <workItem from="1567733529299" duration="690000" />
       <workItem from="1567990218612" duration="11204000" />
-      <workItem from="1568084117221" duration="3849000" />
+      <workItem from="1568084117221" duration="4680000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -414,23 +414,29 @@
       <option name="project" value="LOCAL" />
       <updated>1568087102589</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Search blog by keyword.">
+      <created>1568093846731</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1568093846731</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174347000" />
+    <option name="totallyTimeSpent" value="175178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24394786" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24394786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -457,7 +463,9 @@
     <MESSAGE value="Add display and insert comment layout." />
     <MESSAGE value="Add Blog comment and display it." />
     <MESSAGE value="Add New Posting Page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add New Posting Page." />
+    <MESSAGE value="Add Search blog by keyword." />
+    <MESSAGE value="Search blog by keyword." />
+    <option name="LAST_COMMIT_MESSAGE" value="Search blog by keyword." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -834,22 +842,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="175" column="54" selection-start-line="175" selection-start-column="41" selection-end-line="175" selection-end-column="54" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
