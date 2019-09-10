@@ -1,51 +1,32 @@
 import React from 'react';
-import Dropdown from '../component/dropdownmenu/CategoryDropdown';
-import ProxyServices from "../Service/ProxyServices";
-import { withRouter } from 'react-router-dom';
-import queryString from 'query-string';
+import Dropdown from "../dropdownmenu/CategoryDropdown";
+import queryString from "query-string";
+import ProxyServices from "../../Service/ProxyServices";
 
-
-class Index extends React.Component{
+class NewPosting extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            blogs: [],
-            categories: []
+            blogs: []
         }
-
     }
 
     componentDidMount() {
-        let params = queryString.parse(this.props.location.search);
-        console.log("PARAMS:",params.category);
 
-        if(params.category){
-            ProxyServices.getBlogList(params.category)
-                .then(response => response.data)
-                .then((json) => {
-                    console.log("Response:", JSON.stringify(json));
-                    this.setState({blogs: json});
-                    console.log("BLOGS:", (this.state.blogs));
-                }).catch(() => {
+        ProxyServices.getTodayPosting()
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({blogs: json});
+                console.log("BLOGS:", (this.state.blogs));
+            }).catch(() => {
             })
-        }else{
-            ProxyServices.getBlogList("")
-                .then(response => response.data)
-                .then((json) => {
-                    console.log("Response:", JSON.stringify(json));
-                    this.setState({blogs: json});
-                    console.log("BLOGS:", (this.state.blogs));
-                }).catch(() => {
-            })
-        }
-
-
-
     }
 
+
     render() {
-        return (
+        return(
             <div style={{marginTop:'10px'}}>
                 <div className="row" style={{marginLeft:'20px', marginRight:'20px'}}>
                     <div className="col-md-12">
@@ -75,29 +56,27 @@ class Index extends React.Component{
                     {this.state.blogs.map((data, i) => <BlogData key = {i} data = {data} />)}
                     {console.log(this.state.blogs)}
                 </div>
-
-
             </div>
-        )
+        );
     }
 }
-
-export default withRouter(Index);
 
 class BlogData extends React.Component{
     render() {
         return(
-                    <div className="col-md-4" style={{marginTop: '20px'}}>
-                        <div className="jumbotron" style={{height:'600px'}}>
-                            <h3>{this.props.data.title}</h3>
-                            <p className="lead">{this.props.data.content.substr(0, 250)}</p>
-                            <p className="lead">
-                                <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
-                            </p>
-                        </div>
-                    </div>
+            <div className="col-md-4" style={{marginTop: '20px'}}>
+                <div className="jumbotron" style={{height:'600px'}}>
+                    <h3>{this.props.data.title}</h3>
+                    <p className="lead">{this.props.data.content.substr(0, 250)}</p>
+                    <p className="lead">
+                        <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
+                    </p>
+                </div>
+            </div>
 
 
         );
     }
 }
+
+export default NewPosting;
