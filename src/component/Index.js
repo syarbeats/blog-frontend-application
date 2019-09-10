@@ -27,6 +27,15 @@ class Index extends React.Component{
     onSubmitSearch(event){
         event.preventDefault();
         console.log("Find blog by keyword");
+
+        ProxyServices.getBlogByKeyWord(this.state.keyword)
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({blogs: json});
+                console.log("BLOGS:", (this.state.blogs));
+            }).catch(() => {
+        })
     }
 
     componentDidMount() {
