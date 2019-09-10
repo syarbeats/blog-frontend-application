@@ -14,6 +14,7 @@ import CreateBlog from "../component/blog/CreateBlog";
 import Blog from "../component/blog/Blog";
 import CreateCategory from "../component/category/CreateCategory";
 import CategoryList from "../component/category/CategoryList";
+import NewPosting from "../component/blog/NewPosting";
 
 function AppRouter() {
     return (
@@ -22,6 +23,7 @@ function AppRouter() {
                 <Switch>
                     <Route path="/" exact component = {Index} />
                     <Route path="/home" exact component = {Index} />
+                    <AuthenticatedRoute path="/blog/new" exact component = {NewPosting} />
                     <AuthenticatedRoute path="/category/create" exact component = {CreateCategory} />
                     <AuthenticatedRoute path="/category/list" exact component = {CategoryList} />
                     <Route path="/register-successfully" exact component = {RegisterSuccess}/>

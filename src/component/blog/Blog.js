@@ -56,10 +56,10 @@ class Blog extends React.Component{
                                         <Dropdown/>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/new-posting"><b>New Posting</b></a>
+                                        <a className="nav-link" href="/blog/new"><b>New Posting</b></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/my-posting"><b>My Posting</b></a>
+                                        <a className="nav-link" href="/blog/my"><b>My Posting</b></a>
                                     </li>
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">

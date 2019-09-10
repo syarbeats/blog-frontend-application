@@ -11,9 +11,31 @@ class Index extends React.Component{
         super(props);
         this.state = {
             blogs: [],
-            categories: []
+            categories: [],
+            keyword: ''
         }
 
+        this.onSearchChange = this.onSearchChange.bind(this);
+        this.onSubmitSearch = this.onSubmitSearch.bind(this);
+    }
+
+    onSearchChange(event){
+        console.log("Keyword:", event.target.value);
+        this.setState({keyword: event.target.value});
+    }
+
+    onSubmitSearch(event){
+        event.preventDefault();
+        console.log("Find blog by keyword");
+
+        ProxyServices.getBlogByKeyWord(this.state.keyword)
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({blogs: json});
+                console.log("BLOGS:", (this.state.blogs));
+            }).catch(() => {
+        })
     }
 
     componentDidMount() {
@@ -56,16 +78,16 @@ class Index extends React.Component{
                                         <Dropdown/>
                                     </li>
                                     <li className="nav-item">
-                                        <a id="new-posting" className="nav-link" href="/new-posting"><b>New Posting</b></a>
+                                        <a id="new-posting" className="nav-link" href="/blog/new"><b>New Posting</b></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a id="my-posting" className="nav-link" href="/my-posting"><b>My Posting</b></a>
+                                        <a id="my-posting" className="nav-link" href="/blog/my"><b>My Posting</b></a>
                                     </li>
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
                                     <input className="form-control mr-sm-2" type="search" placeholder="Search"
-                                           aria-label="Search"/>
-                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                           aria-label="Search" onChange={this.onSearchChange}/>
+                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.onSubmitSearch}>Search</button>
                                 </form>
                             </div>
                         </nav>
@@ -89,8 +111,8 @@ class BlogData extends React.Component{
         return(
                     <div className="col-md-4" style={{marginTop: '20px'}}>
                         <div className="jumbotron" style={{height:'600px'}}>
-                            <h1 className="display-4">{this.props.data.title}</h1>
-                            <p className="lead">{this.props.data.content.substr(0, 500)}</p>
+                            <h3>{this.props.data.title}</h3>
+                            <p className="lead">{this.props.data.content.substr(0, 250)}</p>
                             <p className="lead">
                                 <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
                             </p>
