@@ -66,7 +66,7 @@ class BlogData extends React.Component{
         return(
             <div className="col-md-4" style={{marginTop: '20px'}}>
                 <div className="jumbotron" style={{height:'600px'}}>
-                    <h3>{this.props.data.title}</h3>
+                    <h3>{this.props.data.title}</h3> ({this.props.data.createdDate}) <p/>
                     <p className="lead">{this.props.data.content.substr(0, 250)}</p>
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>

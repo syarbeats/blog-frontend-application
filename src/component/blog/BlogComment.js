@@ -155,7 +155,7 @@ class BlogComment extends React.Component {
                                 ref="editor"/>
                     </div>
                     <div className="card-footer">
-                        <button className="btn btn-primary" onClick={this.onSubmitComment}>Send</button>
+                        <button id="send" className="btn btn-primary" onClick={this.onSubmitComment}>Send</button>
                     </div>
                 </div>
             </div>

@@ -62,7 +62,8 @@ class LoginComponent extends Component {
                     this.props.history.push(this.props.location.state);
                 }else{
                     /*this.props.history.push("/category/create");*/
-                    this.props.history.push("/blog/create");
+                   /* this.props.history.push("/blog/create");*/
+                    this.props.history.push("/home");
                 }
             }).catch(() => {
             this.setState({showSuccessMessage: false})
