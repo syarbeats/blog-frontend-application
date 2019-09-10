@@ -82,13 +82,12 @@ class Blog extends React.Component{
                     </div>
                 </div>
                 <div className="row"  style={{marginTop:'20px'}}>
-                    <div className="col-md-12">
+                    <div id="display-comment" className="col-md-12">
                         <DisplayComment title={title} />
                     </div>
                 </div>
                 <div className="row"  style={{marginTop:'20px'}}>
-                    <div className="col-md-12">
-
+                    <div id="send-comment" className="col-md-12">
                         <BlogComment history={this.props.history} id={id} title={title}/>
                     </div>
                 </div>
