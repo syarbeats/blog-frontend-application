@@ -11,9 +11,22 @@ class Index extends React.Component{
         super(props);
         this.state = {
             blogs: [],
-            categories: []
+            categories: [],
+            keyword: ''
         }
 
+        this.onSearchChange = this.onSearchChange.bind(this);
+        this.onSubmitSearch = this.onSubmitSearch.bind(this);
+    }
+
+    onSearchChange(event){
+        console.log("Keyword:", event.target.value);
+        this.setState({keyword: event.target.value});
+    }
+
+    onSubmitSearch(event){
+        event.preventDefault();
+        console.log("Find blog by keyword");
     }
 
     componentDidMount() {
@@ -64,8 +77,8 @@ class Index extends React.Component{
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
                                     <input className="form-control mr-sm-2" type="search" placeholder="Search"
-                                           aria-label="Search"/>
-                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                           aria-label="Search" onChange={this.onSearchChange}/>
+                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.onSubmitSearch}>Search</button>
                                 </form>
                             </div>
                         </nav>
