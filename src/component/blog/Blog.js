@@ -9,44 +9,6 @@ import { EditorState, RichUtils, AtomicBlockUtils, convertFromRaw } from 'draft-
 import Editor from "draft-js-plugins-editor";
 import { mediaBlockRenderer } from "./MediaBlockrenderer";
 
-const initialState = {
-    "blocks":[
-        {
-            "key":"e21ik","text":"If we don’t pass the decorator, everything else like code block, bold text, quote etc will still render correctly in the Draft.js Editor because these are regular text with properties controlled by CSS and the style attribute. With Link, however, we need the decorator to create an anchor tag.",
-            "type":"unstyled",
-            "depth":0,
-            "inlineStyleRanges":[],
-            "entityRanges":[],
-            "data":{}},
-        {
-            "key":"ue87",
-            "text":"",
-            "type":"unstyled",
-            "depth":0,
-            "inlineStyleRanges":[],
-            "entityRanges":[],
-            "data":{}},
-        {
-            "key":"247db",
-            "text":"",
-            "type":"unstyled",
-            "depth":0,
-            "inlineStyleRanges":[],
-            "entityRanges":[],
-            "data":{}},
-        {
-            "key":"3nt0q",
-            "text":" ",
-            "type":"atomic",
-            "depth":0,
-            "inlineStyleRanges":[],
-            "entityRanges":[
-                {
-                    "offset":0,
-                    "length":1,
-                    "key":0}],
-            "data":{}},
-        {"key":"15en4","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{"0":{"type":"image","mutability":"IMMUTABLE","data":{"src":"https://user-images.githubusercontent.com/18225438/64664363-28135e00-d479-11e9-9319-b834f8de087b.png"}}}};
 
 class Blog extends React.Component{
 
@@ -72,6 +34,15 @@ class Blog extends React.Component{
     focus = () => {
         this.editor.focus();
     };
+
+    handleKeyCommand = (command) => {
+        const newState = RichUtils.handleKeyCommand(this.state.editorState, command)
+        if (newState) {
+            this.O(newState);
+            return 'handled';
+        }
+        return 'not-handled';
+    }
 
     componentDidMount() {
         let params = queryString.parse(this.props.location.search);

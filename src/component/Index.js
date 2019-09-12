@@ -3,7 +3,9 @@ import Dropdown from '../component/dropdownmenu/CategoryDropdown';
 import ProxyServices from "../Service/ProxyServices";
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
-
+import { EditorState, RichUtils, AtomicBlockUtils, convertFromRaw } from 'draft-js';
+import Editor from "draft-js-plugins-editor";
+import { mediaBlockRenderer } from "./blog/MediaBlockrenderer";
 
 class Index extends React.Component{
 
@@ -12,12 +14,23 @@ class Index extends React.Component{
         this.state = {
             blogs: [],
             categories: [],
-            keyword: ''
+            keyword: '',
+            editorState: EditorState.createEmpty(),
         }
 
         this.onSearchChange = this.onSearchChange.bind(this);
         this.onSubmitSearch = this.onSubmitSearch.bind(this);
     }
+
+    onChange = (editorState) => {
+        this.setState({
+            editorState,
+        });
+    };
+
+    focus = () => {
+        this.editor.focus();
+    };
 
     onSearchChange(event){
         console.log("Keyword:", event.target.value);
@@ -94,7 +107,7 @@ class Index extends React.Component{
                     </div>
                 </div>
                 <div id="data" className="row" style={{marginLeft:'30px', marginRight:'30px'}}>
-                    {this.state.blogs.map((data, i) => <BlogData key = {i} data = {data} />)}
+                    {this.state.blogs.map((data, i) => <BlogData key = {i} data = {data} editor={this.state.editorState} onChange={this.onEditorChange} blockRendererFn={mediaBlockRenderer} plugins={this.plugins} />)}
                     {console.log(this.state.blogs)}
                 </div>
 
@@ -107,12 +120,36 @@ class Index extends React.Component{
 export default withRouter(Index);
 
 class BlogData extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            editorState:  EditorState.createEmpty(),
+        }
+
+    }
+
+    onChange = (editorState) => {
+        this.setState({
+            editorState,
+        });
+    };
+
+    focus = () => {
+        this.editor.focus();
+    };
+
     render() {
+
+        console.log("Child:",this.props.data.content);
+        //this.setState({ editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content))) });
+
         return(
                     <div className="col-md-4" style={{marginTop: '20px'}}>
                         <div className="jumbotron" style={{height:'600px'}}>
                             <h3>{this.props.data.title}</h3>
-                            <p className="lead">{this.props.data.content.substr(0, 250)}</p>
+                            {/*<p className="lead">{this.props.data.content.substr(0, 250)}</p>*/}
+                            <Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content)))} onChange={this.onChange} plugins={this.props.plugins} />
                             <p className="lead">
                                 <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
                             </p>
