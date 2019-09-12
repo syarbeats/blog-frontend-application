@@ -5,12 +5,56 @@ import queryString from "query-string";
 import { withRouter } from 'react-router-dom';
 import BlogComment from './BlogComment';
 import DisplayComment from './DisplayComment';
+import { EditorState, RichUtils, AtomicBlockUtils, convertFromRaw } from 'draft-js';
+import Editor from "draft-js-plugins-editor";
+import { mediaBlockRenderer } from "./MediaBlockrenderer";
+
+const initialState = {
+    "blocks":[
+        {
+            "key":"e21ik","text":"If we don’t pass the decorator, everything else like code block, bold text, quote etc will still render correctly in the Draft.js Editor because these are regular text with properties controlled by CSS and the style attribute. With Link, however, we need the decorator to create an anchor tag.",
+            "type":"unstyled",
+            "depth":0,
+            "inlineStyleRanges":[],
+            "entityRanges":[],
+            "data":{}},
+        {
+            "key":"ue87",
+            "text":"",
+            "type":"unstyled",
+            "depth":0,
+            "inlineStyleRanges":[],
+            "entityRanges":[],
+            "data":{}},
+        {
+            "key":"247db",
+            "text":"",
+            "type":"unstyled",
+            "depth":0,
+            "inlineStyleRanges":[],
+            "entityRanges":[],
+            "data":{}},
+        {
+            "key":"3nt0q",
+            "text":" ",
+            "type":"atomic",
+            "depth":0,
+            "inlineStyleRanges":[],
+            "entityRanges":[
+                {
+                    "offset":0,
+                    "length":1,
+                    "key":0}],
+            "data":{}},
+        {"key":"15en4","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{"0":{"type":"image","mutability":"IMMUTABLE","data":{"src":"https://user-images.githubusercontent.com/18225438/64664363-28135e00-d479-11e9-9319-b834f8de087b.png"}}}};
 
 class Blog extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            //editorState: EditorState.createWithContent(convertFromRaw(initialState)),
+            editorState: EditorState.createEmpty(),
             blogs: [],
             blog: {},
             id : 0,
@@ -18,6 +62,16 @@ class Blog extends React.Component{
         }
 
     }
+
+    onChange = (editorState) => {
+        this.setState({
+            editorState,
+        });
+    };
+
+    focus = () => {
+        this.editor.focus();
+    };
 
     componentDidMount() {
         let params = queryString.parse(this.props.location.search);
@@ -27,8 +81,9 @@ class Blog extends React.Component{
             ProxyServices.getBlogByTitle(params.title)
                 .then(response => response.data)
                 .then((json) => {
-                    console.log("Response:", JSON.stringify(json));
+                    console.log("Response Blog:", json);
                     this.setState({blog: json, id: json.id, title: json.title});
+                    this.setState({ editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(json.content))) })
                     console.log("BLOG:", (this.state.blog));
                     console.log("BLOG ID:", (this.state.id));
                     console.log("BLOG TITLE:", (this.state.title));
@@ -37,6 +92,7 @@ class Blog extends React.Component{
         }
 
     }
+
 
     render() {
 
@@ -76,7 +132,8 @@ class Blog extends React.Component{
                         <div className="card">
                             <div className="card-body">
                                 <center><h2>{this.state.blog.title}</h2></center> <br/>
-                                {this.state.blog.content}
+                                {/*{this.state.blog.content}*/}
+                                <Editor editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand} blockRendererFn={mediaBlockRenderer} plugins={this.plugins} />
                             </div>
                         </div>
                     </div>
