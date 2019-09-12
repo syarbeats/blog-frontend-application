@@ -228,8 +228,11 @@ class Main extends React.Component{
                                     </i>
                                 </button>
                             </div>
+
                             <Editor style = {{ maxHeight: '200px', overflow: 'auto'}} editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand} blockRendererFn={mediaBlockRenderer}  plugins={this.plugins}
-                                    ref="editor"/>
+                                        ref="editor"/>
+
+
 
                         </div>
                         <div className="col-md-4" style={{marginLeft:'0px'}}>
