@@ -148,8 +148,8 @@ class BlogData extends React.Component{
                     <div className="col-md-4" style={{marginTop: '20px'}}>
                         <div className="jumbotron" style={{height:'600px'}}>
                             <h3>{this.props.data.title}</h3>
-                            {/*<p className="lead">{this.props.data.content.substr(0, 250)}</p>*/}
-                            <Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content)))} onChange={this.onChange} plugins={this.props.plugins} />
+                            <p className="lead">{this.props.data.summary}</p>
+                            {/*<Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content)))} onChange={this.onChange} plugins={this.props.plugins} />*/}
                             <p className="lead">
                                 <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
                             </p>

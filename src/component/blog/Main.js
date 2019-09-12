@@ -21,6 +21,7 @@ class Main extends React.Component{
             categoryId: 1,
             title: '',
             content: '',
+            contentText: '',
             date: date,
             message: '',
             editorState: EditorState.createEmpty(),
@@ -97,7 +98,7 @@ class Main extends React.Component{
         console.log("BLOG-CONTENT:", convertToRaw(editorState.getCurrentContent()));
         //this.setState({editorState, comment: this.state.editorState.getCurrentContent().getPlainText()});
         /*this.setState({editorState, content: this.state.editorState.getCurrentContent().getPlainText()});*/
-        this.setState({editorState, content: JSON.stringify(convertToRaw(editorState.getCurrentContent()))});
+        this.setState({editorState, content: JSON.stringify(convertToRaw(editorState.getCurrentContent())), contentText: this.state.editorState.getCurrentContent().getPlainText()});
     }
 
 
@@ -121,6 +122,7 @@ class Main extends React.Component{
                 categoryId: this.state.categoryId,
                 categoryName: this.state.category,
                 content: this.state.content,
+                summary: this.state.contentText.substr(0,250),
                 title: this.state.title,
             }
 
