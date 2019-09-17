@@ -53,9 +53,9 @@ class LoginComponent extends Component {
         console.log("Password: " + this.state.formControls.password.value);
 
         ProxyServices.executeBasicAuthenticationService(this.state.formControls.username.value, this.state.formControls.password.value)
-            .then(response => response)
+            .then(response => response.data)
             .then((json) => {
-                console.log("TOKEN:", JSON.stringify(json.data.token));
+                console.log("TOKEN FROM SERVER:", JSON.stringify(json.data.token));
                 console.log("Response:", JSON.stringify(json));
                 ProxyServices.registerSuccessfulLogin(this.state.formControls.username.value, this.state.formControls.password.value, json.data.token);
                 if(this.props.location.state){
