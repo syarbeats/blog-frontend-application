@@ -1,6 +1,10 @@
 import React from 'react';
 import ProxyServices from '../../Service/ProxyServices';
 import axios from "axios";
+import { EditorState, RichUtils, AtomicBlockUtils, convertToRaw } from 'draft-js';
+import Editor from "draft-js-plugins-editor";
+import { mediaBlockRenderer } from "./MediaBlockrenderer";
+import { convertToHTML } from 'draft-convert';
 
 class Main extends React.Component{
 
@@ -17,14 +21,86 @@ class Main extends React.Component{
             categoryId: 1,
             title: '',
             content: '',
+            contentText: '',
             date: date,
-            message: ''
+            message: '',
+            editorState: EditorState.createEmpty(),
+            comment: '',
         }
         this.onCategoryOnChange = this.onCategoryOnChange.bind(this);
         this.onSubmitBlog = this.onSubmitBlog.bind(this);
         this.onTitleChange = this.onTitleChange.bind(this);
         this.onContentChange = this.onContentChange.bind(this);
+        this.onEditorChange = this.onEditorChange.bind(this);
     }
+
+    handleKeyCommand = (command) => {
+        const newState = RichUtils.handleKeyCommand(this.state.editorState, command)
+        if (newState) {
+            this.O(newState);
+            return 'handled';
+        }
+        return 'not-handled';
+    }
+
+    onURLChange = e => this.setState({ urlValue: e.target.value });
+
+    focus = () => this.refs.editor.focus();
+
+    onAddImage = e => {
+        e.preventDefault();
+        const editorState = this.state.editorState;
+        const urlValue = window.prompt("Paste Image Link");
+        const contentState = editorState.getCurrentContent();
+        const contentStateWithEntity = contentState.createEntity(
+            "image",
+            "IMMUTABLE",
+            { src: urlValue }
+        );
+        const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+        const newEditorState = EditorState.set(
+            editorState,
+            { currentContent: contentStateWithEntity },
+            "create-entity"
+        );
+        this.setState(
+            {
+                editorState: AtomicBlockUtils.insertAtomicBlock(
+                    newEditorState,
+                    entityKey,
+                    " "
+                )
+            },
+            () => {
+                setTimeout(() => this.focus(), 0);
+            }
+        );
+    };
+
+    onUnderlineClick = () => {
+        this.onEditorChange(
+            RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE")
+        );
+    };
+
+    onBoldClick = () => {
+        this.onEditorChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
+    };
+
+    onItalicClick = () => {
+        this.onEditorChange(
+            RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC")
+        );
+    };
+
+    onEditorChange(editorState){
+        console.log("TEXT:", this.state.editorState.getCurrentContent().getPlainText());
+        console.log("BLOG-CONTENT:", convertToRaw(editorState.getCurrentContent()));
+        //this.setState({editorState, comment: this.state.editorState.getCurrentContent().getPlainText()});
+        /*this.setState({editorState, content: this.state.editorState.getCurrentContent().getPlainText()});*/
+        this.setState({editorState, content: JSON.stringify(convertToRaw(editorState.getCurrentContent())), contentText: this.state.editorState.getCurrentContent().getPlainText()});
+    }
+
 
     onCategoryOnChange(event){
         console.log("Category:", event.target.options[event.target.selectedIndex].text);
@@ -36,11 +112,17 @@ class Main extends React.Component{
         console.log("Category Id:", event.target.key);
         //event.preventDefault();
 
+        const content = convertToHTML(this.state.editorState.getCurrentContent());
+        // content to save to the db
+        const contentToSave = JSON.stringify(content);
+        console.log("Content:",contentToSave);
+
         if(this.state.title != "" && this.state.category !== "" && this.state.content !== ""){
             let payload = {
                 categoryId: this.state.categoryId,
                 categoryName: this.state.category,
                 content: this.state.content,
+                summary: this.state.contentText.substr(0,250),
                 title: this.state.title,
             }
 
@@ -121,8 +203,37 @@ class Main extends React.Component{
                         </div>
                         <div className="col-md-7" style={{marginLeft:'0px'}}>
                             {/*<EditorComponent/>*/}
-                            <textarea rows = "20" cols = "120" name = "description" id="content" onChange={this.onContentChange}>
-                            </textarea>
+                            {/*<textarea rows = "20" cols = "120" name = "description" id="content" onChange={this.onContentChange}>
+                            </textarea>*/}
+
+                            <div className="menuButtons">
+                                <button onClick={this.onUnderlineClick}>U</button>
+                                <button onClick={this.onBoldClick}>
+                                    <b>B</b>
+                                </button>
+                                <button onClick={this.onItalicClick}>
+                                    <em>I</em>
+                                </button>
+                                <button className="inline styleButton" onClick={this.onAddImage}>
+                                    <i
+                                        className="material-icons"
+                                        style={{
+                                            fontSize: "16px",
+                                            textAlign: "center",
+                                            padding: "0px",
+                                            margin: "0px"
+                                        }}
+                                    >
+                                        image
+                                    </i>
+                                </button>
+                            </div>
+
+                            <Editor style = {{ maxHeight: '200px', overflow: 'auto'}} editorState={this.state.editorState} onChange={this.onEditorChange} handleKeyCommand={this.handleKeyCommand} blockRendererFn={mediaBlockRenderer}  plugins={this.plugins}
+                                        ref="editor"/>
+
+
+
                         </div>
                         <div className="col-md-4" style={{marginLeft:'0px'}}>
                         </div>
