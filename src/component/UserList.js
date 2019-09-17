@@ -19,8 +19,8 @@ class UserList extends React.Component{
         AuthenticationService.getUserList()
             .then(response => response.data)
             .then((json)=>{
-                console.log("Response:", JSON.stringify(json));
-                this.setState({users: json.contents.data})
+                console.log("Response User List:", JSON.stringify(json.data.data));
+                this.setState({users: json.data.data})
             });
     }
 
