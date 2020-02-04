@@ -77,8 +77,8 @@ class UserRegister extends React.Component{
                     }else{
                         this.props.history.push("/register-failed")
                     }
-
                 })
+                this.props.history.push("/register-successfully")
         }else {
             console.log("Please fill the data completely!");
             this.setState({message: "Please fill the data completely!"});

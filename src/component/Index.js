@@ -142,21 +142,25 @@ class BlogData extends React.Component{
     render() {
 
         console.log("Child:",this.props.data.content);
-        //this.setState({ editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content))) });
+
+        let approvedBlog;
+
+        if(this.props.data.status){
+            approvedBlog = (
+                <div className="jumbotron" style={{height:'600px'}}>
+                    <h3>{this.props.data.title}</h3>
+                    <p className="lead">{this.props.data.summary}</p>
+                    <p className="lead">
+                        <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
+                    </p>
+                </div>
+            );
+        }
 
         return(
-                    <div className="col-md-4" style={{marginTop: '20px'}}>
-                        <div className="jumbotron" style={{height:'600px'}}>
-                            <h3>{this.props.data.title}</h3>
-                            <p className="lead">{this.props.data.summary}</p>
-                            {/*<Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content)))} onChange={this.onChange} plugins={this.props.plugins} />*/}
-                            <p className="lead">
-                                <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
-                            </p>
-                        </div>
-                    </div>
-
-
+            <div className="col-md-4" style={{marginTop: '20px'}}>
+                {approvedBlog}
+            </div>
         );
     }
 }

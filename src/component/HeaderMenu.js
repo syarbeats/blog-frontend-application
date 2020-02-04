@@ -32,6 +32,10 @@ class HeaderMenu extends React.Component{
                                     <button type="button" className="btn btn-success">Create Blog Category</button></a>
                             </li>
                             <li className="nav-item">
+                                <a className="nav-link" href="/blog/approval">
+                                    <button type="button" className="btn btn-success">Blog Approval</button></a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link" href="/category/list">
                                     <button type="button" className="btn btn-success">Category List</button></a>
                             </li>
