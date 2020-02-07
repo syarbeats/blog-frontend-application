@@ -11,11 +11,19 @@ This is the simple blog application developed by using ReactJS as frontend frame
 
 ## Architecture
 
-<img width="446" alt="Architecture" src="https://user-images.githubusercontent.com/18225438/64319615-06345a00-cfe7-11e9-931a-ab2ba0f2a751.PNG">
+<img width="516" alt="Microservice Architecture" src="https://user-images.githubusercontent.com/18225438/70013213-8ac45380-15a9-11ea-9786-e42bc4bfacbb.PNG">
 
-## Backend
-1. Gateway Application : https://github.com/syarbeats/blog-gateway-application-v1.git
-2. Blog Microservices  : https://github.com/syarbeats/blog-microservices-v1.git
+1. Service Registry: https://github.com/syarbeats/service-registry.git
+2. Blog-config: https://github.com/syarbeats/blog-config.git
+3. Blog-app-config: https://github.com/syarbeats/configuration-server.git
+4. Gateway Application: https://github.com/syarbeats/gateway-application-v3.git
+5. Approval Microservice: https://github.com/syarbeats/approval-service.git
+
+## URL
+1. Spring Eureuka URL: http://localhost:8761/
+2. Swagger UI for Gateway App: http://localhost:8090/swagger-ui.html
+3. Swagger UI for Blog Microservices: http://localhost:8081/swagger-ui.html
+4. Swagger UI for Approval Microservices: http://localhost:8087/swagger-ui.html
 
 ### Workflow
 
