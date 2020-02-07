@@ -18,6 +18,7 @@ This is the simple blog application developed by using ReactJS as frontend frame
 3. Blog-app-config: https://github.com/syarbeats/configuration-server.git
 4. Gateway Application: https://github.com/syarbeats/gateway-application-v3.git
 5. Approval Microservice: https://github.com/syarbeats/approval-service.git
+6. Blog Microservice: https://github.com/syarbeats/blog-microservices-v3.git
 
 ## URL
 1. Spring Eureuka URL: http://localhost:8761/
