@@ -2,8 +2,9 @@ import axios from 'axios'
 import {Redirect} from "react-router-dom";
 import React from "react";
 
-const API_URL = 'http://localhost:8090'
-const API_URL2 = 'http://localhost:8081'
+const API_URL = 'http://localhost:8090';
+const API_URL2 = 'http://localhost:8081';
+const API_URL_APPROVAL = 'http://localhost:8087';
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 export const PASSWORD_SESSION_ATTRIBUTE_NAME = 'password'
@@ -175,6 +176,30 @@ class ProxyServices {
         /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
         return axios.get(`${API_URL2}/api/posts/search?keyword=${keyword}` );
 
+    }
+
+    getAllApprovalData(approvalProgress){
+
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(approvalProgress){
+            return axios.get(`${API_URL_APPROVAL}/api/approval-list?approval=${approvalProgress}` );
+        }
+    }
+
+    updateProgressStatus(id, status){
+
+        let token = this.getToken();
+        console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(id){
+            return axios.post(`${API_URL_APPROVAL}/api/process?id=${id}&status=${status}` );
+        }
     }
 
 }

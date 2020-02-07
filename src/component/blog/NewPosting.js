@@ -60,6 +60,16 @@ class NewPosting extends React.Component{
             })
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        ProxyServices.getTodayPosting()
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({blogs: json});
+                console.log("BLOGS:", (this.state.blogs));
+            }).catch(() => {
+        })
+    }
 
     render() {
         return(
@@ -123,16 +133,24 @@ class BlogData extends React.Component{
         console.log("Child:",this.props.data.content);
         //this.setState({ editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content))) });
 
-        return(
-            <div className="col-md-4" style={{marginTop: '20px'}}>
+        let approvedBlog;
+
+        if(this.props.data.status){
+            approvedBlog = (
                 <div className="jumbotron" style={{height:'600px'}}>
                     <h3>{this.props.data.title}</h3>
                     <p className="lead">{this.props.data.summary}</p>
-                    {/*<Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content)))} onChange={this.onChange} plugins={this.props.plugins} />*/}
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
                     </p>
                 </div>
+            );
+        }
+
+
+        return(
+            <div className="col-md-4" style={{marginTop: '20px'}}>
+                {approvedBlog}
             </div>
 
 
