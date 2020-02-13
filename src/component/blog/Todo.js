@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import queryString from "query-string";
-import ProxyServices from "../../Service/ProxyServices";
-import { withRouter } from 'react-router-dom';
-import {mediaBlockRenderer} from "./MediaBlockrenderer";
-
+import ProxyServices from '../../Service/ProxyServices'
 
 class Todo extends Component{
 
@@ -26,13 +22,28 @@ class Todo extends Component{
 
     }*/
 
+
+    componentDidMount() {
+       /* this.setState({approval: this.props.todo})*/
+        ProxyServices.getAllApprovalData('To Do')
+            .then(response => response.data)
+            .then((json) => {
+                console.log("Response:", JSON.stringify(json));
+                this.setState({approval: json});
+                console.log("Approval Data:", (this.state.approval));
+            }).catch(() => {
+        })
+    }
+
     componentWillReceiveProps(nextProps, nextContext) {
+        console.log("Receiving PROPSS...", nextProps);
         this.setState({approval: nextProps})
     }
 
     render() {
 
         let blog;
+
 
         if(this.state.approval.summary){
             blog = this.state.approval.map((data, i) => <BlogTodo key = {i} data = {data} />)
@@ -42,46 +53,6 @@ class Todo extends Component{
 
         return (
             <div>
-
-                    {/*<div className="card">
-                        <div className="card-header bg-primary text-white">BLOG Title</div>
-                        <div className="card-body">
-                            <p>In the reactive style of programming, we make a request for the resource
-                                and start performing other things. When the data is available,
-                                we get the notification along with data in the form of call back function.
-                                In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                                <a className="btn btn-primary" href={"/blog?title=" } role="button">Process</a>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div className="card">
-                        <div className="card-header bg-primary text-white">BLOG Title</div>
-                        <div className="card-body">
-                            <p>In the reactive style of programming, we make a request for the resource
-                                and start performing other things. When the data is available,
-                                we get the notification along with data in the form of call back function.
-                                In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                                <a className="btn btn-primary" href={"/blog?title=" } role="button">Process</a>
-                        </div>
-                    </div>
-                <hr/>
-                <div className="card">
-                    <div className="card-header bg-primary text-white">BLOG Title</div>
-                    <div className="card-body">
-                        <p>In the reactive style of programming, we make a request for the resource
-                            and start performing other things. When the data is available,
-                            we get the notification along with data in the form of call back function.
-                            In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                            <a className="btn btn-primary" href={"/blog?title=" } role="button">Process</a>
-                    </div>
-                </div>*/}
-
-
-                {/*{this.state.approval.map((data, i) => <BlogTodo key = {i} data = {data} />)}*/}
-                {/*{this.props.todo.map((data, i) => <BlogTodo key = {i} data = {data} />)}*/}
                 {blog}
             </div>
         );

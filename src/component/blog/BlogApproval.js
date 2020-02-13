@@ -17,10 +17,13 @@ class BlogApproval extends React.Component{
         }
     }
 
+
     componentDidMount() {
+
         let params = queryString.parse(this.props.location.search);
         console.log("PARAMS:",params.id);
         console.log("PARAMS:",params.status);
+        console.log("Update STATUS...", params.id, params.status )
 
         if(params.id){
             ProxyServices.updateProgressStatus(params.id, params.status)

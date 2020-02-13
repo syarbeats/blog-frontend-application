@@ -11,15 +11,7 @@ class InProgress extends Component{
     }
 
     componentDidMount() {
-       /* ProxyServices.getAllApprovalData('In Progress')
-            .then(response => response.data)
-            .then((json) => {
-                console.log("Response:", JSON.stringify(json));
-                this.setState({approval: json});
-                console.log("Approval Data:", (this.state.approval));
-            }).catch(() => {
-        })*/
-
+        this.setState({approval: this.props.inprogress})
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -38,48 +30,6 @@ class InProgress extends Component{
 
         return (
             <div>
-
-                {/*<div className="card">
-                    <div className="card-header bg-secondary text-white">BLOG Title</div>
-                    <div className="card-body">
-                        <p>In the reactive style of programming, we make a request for the resource
-                            and start performing other things. When the data is available,
-                            we get the notification along with data in the form of call back function.
-                            In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                        <a className="btn btn-secondary" href={"/blog?title=" } role="button">Approve</a>
-                        <a className="btn btn-secondary" href={"/blog?title="} style={{marginLeft: '10px'}} role="button">Reject</a>
-                    </div>
-                </div>
-                <hr/>
-                <div className="card">
-                    <div className="card-header bg-secondary text-white">BLOG Title</div>
-                    <div className="card-body">
-                        <p>In the reactive style of programming, we make a request for the resource
-                            and start performing other things. When the data is available,
-                            we get the notification along with data in the form of call back function.
-                            In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                        <a className="btn btn-secondary" href={"/blog?title=" } role="button">Approve</a>
-                        <a className="btn btn-secondary" href={"/blog?title="} style={{marginLeft: '10px'}} role="button">Reject</a>
-                    </div>
-                </div>
-                <hr/>
-                <div className="card">
-                    <div className="card-header bg-secondary text-white">BLOG Title</div>
-                    <div className="card-body">
-                        <p>In the reactive style of programming, we make a request for the resource
-                            and start performing other things. When the data is available,
-                            we get the notification along with data in the form of call back function.
-                            In the callback function, we handle the response as per application/user needs.<a href="">Read More..</a></p>
-
-                        <a className="btn btn-secondary" href={"/blog?title=" } role="button">Approve</a>
-                        <a className="btn btn-secondary" href={"/blog?title="} style={{marginLeft: '10px'}} role="button">Reject</a>
-                    </div>
-                </div>*/}
-
-                {/*{this.state.approval.map((data, i) => <BlogInProgress key = {i} data = {data} />)}*/}
-                {/*{this.props.inprogress.map((data, i) => <BlogInProgress key = {i} data = {data} />)}*/}
                 {blog}
             </div>
         );
