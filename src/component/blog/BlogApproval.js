@@ -13,47 +13,89 @@ class BlogApproval extends React.Component{
         this.state = {
             id : 0,
             todo: [],
-            inprogress: []
+            inprogress: [],
+            done: []
         }
+
+        this.getAllApprovalData = this.getAllApprovalData.bind(this);
     }
 
 
     componentDidMount() {
 
         let params = queryString.parse(this.props.location.search);
-        console.log("PARAMS:",params.id);
+       /* console.log("PARAMS:",params.id);
         console.log("PARAMS:",params.status);
-        console.log("Update STATUS...", params.id, params.status )
+        console.log("PARAMS:",params.progress);
+        console.log("Update STATUS...", params.id, params.status,params.progress)*/
+
+       console.log("ComponentDidAmount...[BlogApproval] - ID:", params.id);
 
         if(params.id){
-            ProxyServices.updateProgressStatus(params.id, params.status)
+            ProxyServices.updateProgressStatus(params.id, params.status, params.progress)
                 .then(response => response.data)
                 .then((json) => {
-                    console.log("Response:", JSON.stringify(json));
+                    //console.log("Response:", JSON.stringify(json));
                     this.setState({blogs: json});
-                    console.log("BLOGS:", (this.state.blogs));
+                    this.getAllApprovalData('To Do');
+                    this.getAllApprovalData('In Progress');
+                    this.getAllApprovalData('Done');
+                    //console.log("BLOGS:", (this.state.blogs));
                 }).catch(() => {
             })
+        }else {
+            this.getAllApprovalData('To Do');
+            this.getAllApprovalData('In Progress');
+            this.getAllApprovalData('Done');
         }
 
-        ProxyServices.getAllApprovalData('To Do')
+        /*ProxyServices.getAllApprovalData('To Do')
             .then(response => response.data)
             .then((json) => {
-                console.log("Response:", JSON.stringify(json));
+                //console.log("Response:", JSON.stringify(json));
                 this.setState({todo: json});
-                console.log("Approval Data:", (this.state.todo));
+                //console.log("Approval Data:", (this.state.todo));
             }).catch(() => {
         })
 
         ProxyServices.getAllApprovalData('In Progress')
             .then(response => response.data)
             .then((json) => {
-                console.log("Response:", JSON.stringify(json));
+                //console.log("Response:", JSON.stringify(json));
                 this.setState({inprogress: json});
-                console.log("Approval Data:", (this.state.inprogress));
+                //console.log("Approval Data:", (this.state.inprogress));
+            }).catch(() => {
+        })
+
+        ProxyServices.getAllApprovalData('Done')
+            .then(response => response.data)
+            .then((json) => {
+                //console.log("Response:", JSON.stringify(json));
+                this.setState({done: json});
+                //console.log("Approval Data:", (this.state.done));
+            }).catch(() => {
+        })*/
+    }
+
+    getAllApprovalData(progress){
+        ProxyServices.getAllApprovalData(progress)
+            .then(response => response.data)
+            .then((json) => {
+                //console.log("Response:", JSON.stringify(json));
+                if(progress == 'To Do'){
+                    this.setState({todo: json});
+                }else if(progress == 'In Progress')
+                {
+                    this.setState({inprogress: json});
+                }
+                else {
+                    this.setState({done: json});
+                }
+
             }).catch(() => {
         })
     }
+
 
     render() {
         return(
@@ -77,7 +119,7 @@ class BlogApproval extends React.Component{
                         <InProgress inprogress={this.state.inprogress}/>
                     </div>
                     <div className="col-md-4">
-                        <Done/>
+                        <Done done={this.state.done}/>
                     </div>
                 </div>
             </div>

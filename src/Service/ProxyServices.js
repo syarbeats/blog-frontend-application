@@ -181,7 +181,7 @@ class ProxyServices {
     getAllApprovalData(approvalProgress){
 
         let token = this.getToken();
-        console.log("TOKEN SERVICE:", token);
+        //console.log("TOKEN SERVICE:", token);
         axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
         console.log("Header:", axios.defaults.headers.common);
 
@@ -190,15 +190,15 @@ class ProxyServices {
         }
     }
 
-    updateProgressStatus(id, status){
+    updateProgressStatus(id, status, progress){
 
         let token = this.getToken();
-        console.log("TOKEN SERVICE:", token);
+        //console.log("TOKEN SERVICE:", token);
         axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
         console.log("Header:", axios.defaults.headers.common);
 
         if(id){
-            return axios.post(`${API_URL_APPROVAL}/api/process?id=${id}&status=${status}` );
+            return axios.post(`${API_URL_APPROVAL}/api/process?id=${id}&status=${status}&progress=${progress}` );
         }
     }
 
