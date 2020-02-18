@@ -74,7 +74,7 @@ class ProxyServices {
         return axios.post(`${API_URL}/api/resetpassword`, payload);
     }
 
-    getBlogList(category){
+    getBlogList(category, page){
 
         let token = this.getToken();
         console.log("TOKEN SERVICE:", token);
@@ -83,9 +83,9 @@ class ProxyServices {
 
         if(category == '' || category == null){
            /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
-            return axios.get(`${API_URL2}/api/posts`);
+            return axios.get(`${API_URL2}/api/posts?page=${page}&size=6`);
         }else{
-            return axios.get(`${API_URL2}/api/posts/category?category=`+ category);
+            return axios.get(`${API_URL2}/api/posts/category?category=`+ category+'&page='+page+'&size=6');
         }
     }
 
