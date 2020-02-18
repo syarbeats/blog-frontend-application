@@ -1,4 +1,3 @@
-
 # Blog application
 This is the simple blog application developed by using ReactJS as frontend framework.
 
