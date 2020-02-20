@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/blog/BlogApproval.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/blog/BlogApproval.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="145" column="39" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -336,7 +335,7 @@
       <workItem from="1581992464263" duration="9628000" />
       <workItem from="1582074864489" duration="10368000" />
       <workItem from="1582160328836" duration="639000" />
-      <workItem from="1582161728246" duration="5275000" />
+      <workItem from="1582161728246" duration="6247000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -492,14 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582004503655</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add nofitification functionality through websocket client.">
+      <created>1582170075472</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1582170075473</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296228000" />
+    <option name="totallyTimeSpent" value="297200000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
@@ -543,7 +549,8 @@
     <MESSAGE value="Implement update approval progress." />
     <MESSAGE value="bug fixing on update progress on approval process." />
     <MESSAGE value="add paging in blog list display." />
-    <option name="LAST_COMMIT_MESSAGE" value="add paging in blog list display." />
+    <MESSAGE value="add nofitification functionality through websocket client." />
+    <option name="LAST_COMMIT_MESSAGE" value="add nofitification functionality through websocket client." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/route/router-dashboard.js">
@@ -938,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="145" column="39" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

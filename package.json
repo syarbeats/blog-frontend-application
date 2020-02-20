@@ -37,6 +37,7 @@
     "react-froala-wysiwyg": "^3.0.5",
     "react-js-pagination": "^3.0.2",
     "react-notification-popup": "^0.1.2",
+    "react-notifications": "^1.4.3",
     "react-redux": "^7.0.2",
     "react-render-html": "^0.6.0",
     "react-router": "^5.0.0",

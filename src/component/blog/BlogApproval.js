@@ -9,9 +9,9 @@ import SockJS from 'sockjs-client';
 import Stomp from 'stompjs';
 
 import SockJsClient from 'react-stomp';
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
-
-let test;
 
 class BlogApproval extends React.Component{
 
@@ -35,6 +35,7 @@ class BlogApproval extends React.Component{
     showNotification = function(message){
         console.log("Message from stomp:", message);
         this.setState({message: message});
+        NotificationManager.info(message);
     }
 
     errorOnSocket(message){
@@ -111,7 +112,8 @@ class BlogApproval extends React.Component{
         return(
             <div>
                 <div className="row justify-content-md-center" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
-                    <b>BLOG APPROVAL PROCESS</b>
+                    <b>BLOG APPROVAL PROCESS [{this.state.message}]</b>
+                    <NotificationContainer/>
                 </div>
                 <div className="row" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
                     <div className="col-md-4  btn-primary">
@@ -140,10 +142,11 @@ class BlogApproval extends React.Component{
                                   onMessage={(msg) => {
                                       console.log("Message from websocket:",msg);
                                       this.showNotification(msg);
+
                                   }}/>
                 </div>
                 <div>
-                    {this.state.message}
+
                 </div>
             </div>
 
