@@ -5,6 +5,14 @@ import Done from "./Done";
 import queryString from "query-string";
 import ProxyServices from "../../Service/ProxyServices";
 
+import SockJS from 'sockjs-client';
+import Stomp from 'stompjs';
+
+import SockJsClient from 'react-stomp';
+
+
+let test;
+
 class BlogApproval extends React.Component{
 
     constructor(props){
@@ -14,12 +22,24 @@ class BlogApproval extends React.Component{
             id : 0,
             todo: [],
             inprogress: [],
-            done: []
+            done: [],
+            latestMessage: '',
+            message: ''
         }
 
         this.getAllApprovalData = this.getAllApprovalData.bind(this);
+        this.showNotification = this.showNotification.bind(this);
+        this.errorOnSocket = this.errorOnSocket.bind(this);
     }
 
+    showNotification = function(message){
+        console.log("Message from stomp:", message);
+        this.setState({message: message});
+    }
+
+    errorOnSocket(message){
+        console.log("Message from stomp:", message);
+    }
 
     componentDidMount() {
 
@@ -49,39 +69,28 @@ class BlogApproval extends React.Component{
             this.getAllApprovalData('Done');
         }
 
-        /*ProxyServices.getAllApprovalData('To Do')
-            .then(response => response.data)
-            .then((json) => {
-                //console.log("Response:", JSON.stringify(json));
-                this.setState({todo: json});
-                //console.log("Approval Data:", (this.state.todo));
-            }).catch(() => {
-        })
+        /*var sock = new SockJS('http://localhost:8087/stomp');
+        let stompClient = Stomp.over(sock);
 
-        ProxyServices.getAllApprovalData('In Progress')
-            .then(response => response.data)
-            .then((json) => {
-                //console.log("Response:", JSON.stringify(json));
-                this.setState({inprogress: json});
-                //console.log("Approval Data:", (this.state.inprogress));
-            }).catch(() => {
-        })
+        sock.onopen = function() {
+            console.log('open');
+        }
 
-        ProxyServices.getAllApprovalData('Done')
-            .then(response => response.data)
-            .then((json) => {
-                //console.log("Response:", JSON.stringify(json));
-                this.setState({done: json});
-                //console.log("Approval Data:", (this.state.done));
-            }).catch(() => {
-        })*/
+        stompClient.connect({headers: headers}, function(frame){
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/topic/message', function (greeting) {
+                console.log(greeting);
+                test = greeting;
+            });
+        });*/
+
     }
 
     getAllApprovalData(progress){
         ProxyServices.getAllApprovalData(progress)
             .then(response => response.data)
             .then((json) => {
-                //console.log("Response:", JSON.stringify(json));
+                console.log("Response:", JSON.stringify(json));
                 if(progress == 'To Do'){
                     this.setState({todo: json});
                 }else if(progress == 'In Progress')
@@ -98,8 +107,12 @@ class BlogApproval extends React.Component{
 
 
     render() {
+
         return(
             <div>
+                <div className="row justify-content-md-center" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
+                    <b>BLOG APPROVAL PROCESS</b>
+                </div>
                 <div className="row" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
                     <div className="col-md-4  btn-primary">
                         <div className="card-header"><center><b>TO DO</b></center></div>
@@ -121,6 +134,16 @@ class BlogApproval extends React.Component{
                     <div className="col-md-4">
                         <Done done={this.state.done}/>
                     </div>
+                </div>
+                <div>
+                    <SockJsClient url='http://localhost:8087/stomp' topics={['/topic/message']}
+                                  onMessage={(msg) => {
+                                      console.log("Message from websocket:",msg);
+                                      this.showNotification(msg);
+                                  }}/>
+                </div>
+                <div>
+                    {this.state.message}
                 </div>
             </div>
 

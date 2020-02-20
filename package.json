@@ -36,17 +36,22 @@
     "react-dom": "^16.8.5",
     "react-froala-wysiwyg": "^3.0.5",
     "react-js-pagination": "^3.0.2",
+    "react-notification-popup": "^0.1.2",
     "react-redux": "^7.0.2",
     "react-render-html": "^0.6.0",
     "react-router": "^5.0.0",
     "react-router-config": "^4.4.0-beta.8",
     "react-router-dom": "~4.3.1",
+    "react-stomp": "^4.3.0",
+    "react-stomp-client": "^1.2.0",
     "react-test-renderer": "^16.8.5",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "simple-line-icons": "^2.4.1"
+    "simple-line-icons": "^2.4.1",
+    "sockjs-client": "^1.4.0",
+    "stompjs": "^2.3.3"
   },
   "devDependencies": {
     "react-scripts": "^2.1.8"

@@ -65,7 +65,7 @@ class Index extends React.Component{
 
     fetchBlogData(category, page){
         if(category){
-            ProxyServices.getBlogList(category, page)
+            ProxyServices.getBlogList(category, page-1)
                 .then(response => response.data)
                 .then((json) => {
                     console.log("Response:", JSON.stringify(json));
@@ -74,7 +74,7 @@ class Index extends React.Component{
                 }).catch(() => {
             })
         }else{
-            ProxyServices.getBlogList("", page)
+            ProxyServices.getBlogList("", page-1)
                 .then(response => response.data)
                 .then((json) => {
                     console.log("Response:", JSON.stringify(json));
@@ -189,10 +189,8 @@ class BlogData extends React.Component{
 
         console.log("Child:",this.props.data.content);
 
-        let approvedBlog;
-
-        if(this.props.data.status){
-            approvedBlog = (
+        /*if(this.props.data.status){*/
+        let approvedBlog = (
                 <div className="jumbotron" style={{height:'600px'}}>
                     <h3>{this.props.data.title}</h3>
                     <p className="lead">{this.props.data.summary}</p>
@@ -201,7 +199,7 @@ class BlogData extends React.Component{
                     </p>
                 </div>
             );
-        }
+        /*}*/
 
         return(
             <div className="col-md-4" style={{marginTop: '20px'}}>
