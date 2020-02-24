@@ -202,6 +202,17 @@ class ProxyServices {
         }
     }
 
+    sendNotification(message){
+        let token = this.getToken();
+        //console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        if(message){
+            return axios.get(`${API_URL_APPROVAL}/send/message?message=${message}`);
+        }
+    }
+
 }
 
 export default new ProxyServices()

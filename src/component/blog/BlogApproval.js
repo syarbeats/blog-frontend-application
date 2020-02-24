@@ -61,6 +61,7 @@ class BlogApproval extends React.Component{
                     this.getAllApprovalData('To Do');
                     this.getAllApprovalData('In Progress');
                     this.getAllApprovalData('Done');
+                    //ProxyServices.sendNotification("Test");
                     //console.log("BLOGS:", (this.state.blogs));
                 }).catch(() => {
             })
@@ -106,7 +107,6 @@ class BlogApproval extends React.Component{
         })
     }
 
-
     render() {
 
         return(
@@ -114,6 +114,7 @@ class BlogApproval extends React.Component{
                 <div className="row justify-content-md-center" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
                     <b>BLOG APPROVAL PROCESS [{this.state.message}]</b>
                     <NotificationContainer/>
+
                 </div>
                 <div className="row" style={{marginTop:'20px', marginLeft: '10px', marginRight: '15px'}}>
                     <div className="col-md-4  btn-primary">
