@@ -178,15 +178,16 @@ class ProxyServices {
 
     }
 
-    getAllApprovalData(approvalProgress){
+    getAllApprovalData(approvalProgress, page){
 
         let token = this.getToken();
         //console.log("TOKEN SERVICE:", token);
         axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
         console.log("Header:", axios.defaults.headers.common);
 
+
         if(approvalProgress){
-            return axios.get(`${API_URL_APPROVAL}/api/approval-list?approval=${approvalProgress}` );
+            return axios.get(`${API_URL_APPROVAL}/api/approval-list?approval=${approvalProgress}`+'&page='+page+"&size=6" );
         }
     }
 

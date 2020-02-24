@@ -11,7 +11,7 @@ import Stomp from 'stompjs';
 import SockJsClient from 'react-stomp';
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-
+import Pagination from 'react-js-pagination';
 
 class BlogApproval extends React.Component{
 
@@ -24,12 +24,24 @@ class BlogApproval extends React.Component{
             inprogress: [],
             done: [],
             latestMessage: '',
-            message: ''
+            message: '',
+            activePage: 1
         }
 
         this.getAllApprovalData = this.getAllApprovalData.bind(this);
         this.showNotification = this.showNotification.bind(this);
         this.errorOnSocket = this.errorOnSocket.bind(this);
+        this.handlePageChange = this.handlePageChange.bind(this);
+    }
+
+    handlePageChange(pageNumber) {
+        console.log(`active page is ${pageNumber}`);
+        this.setState({activePage: pageNumber});
+
+        /*this.fetchBlogData("", pageNumber)*/
+        this.getAllApprovalData('To Do', pageNumber);
+        this.getAllApprovalData('In Progress', pageNumber);
+        this.getAllApprovalData('Done', pageNumber);
     }
 
     showNotification = function(message){
@@ -88,8 +100,8 @@ class BlogApproval extends React.Component{
 
     }
 
-    getAllApprovalData(progress){
-        ProxyServices.getAllApprovalData(progress)
+    getAllApprovalData(progress, page){
+        ProxyServices.getAllApprovalData(progress, page-1)
             .then(response => response.data)
             .then((json) => {
                 console.log("Response:", JSON.stringify(json));
@@ -146,8 +158,16 @@ class BlogApproval extends React.Component{
 
                                   }}/>
                 </div>
-                <div>
-
+                <div className="row justify-content-md-center" style={{marginLeft:'30px', marginRight:'30px'}}>
+                    <Pagination
+                        activePage={this.state.activePage}
+                        itemsCountPerPage={10}
+                        totalItemsCount={450}
+                        pageRangeDisplayed={5}
+                        onChange={this.handlePageChange}
+                        itemClass="page-item"
+                        linkClass="page-link"
+                    />
                 </div>
             </div>
 

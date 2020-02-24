@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import ProxyServices from "../../Service/ProxyServices";
 
+
 class Done extends Component{
 
     constructor(props) {
         super(props);
         this.state ={
             approval: [],
-            status: ''
+            status: '',
         }
+
+
     }
+
+
 
     /*componentDidMount() {
         this.setState({approval: this.props.done})
