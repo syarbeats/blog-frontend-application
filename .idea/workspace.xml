@@ -4,7 +4,7 @@
     <list default="true" id="06c7eaeb-4ec9-4df4-a427-010cbb6a4319" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProxyServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProxyServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/blog/BlogApproval.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/blog/BlogApproval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/blog/NewPosting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/blog/NewPosting.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="204" column="20" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="20" />
+            <state relative-caret-position="183">
+              <caret line="160" column="87" lean-forward="true" selection-start-line="160" selection-start-column="87" selection-end-line="160" selection-end-column="87" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -41,11 +41,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/Index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+            <state>
+              <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/blog/NewPosting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -56,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/Done.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -68,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/InProgress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
+            <state relative-caret-position="153">
               <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -106,6 +130,7 @@
       <find>&lt;Blog&gt;</find>
       <find>Blog</find>
       <find>blogs</find>
+      <find>sendNotification</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,14 +182,14 @@
         <option value="$PROJECT_DIR$/src/route/router.js" />
         <option value="$PROJECT_DIR$/src/component/UserRegister.js" />
         <option value="$PROJECT_DIR$/src/component/Login.js" />
-        <option value="$PROJECT_DIR$/src/component/blog/NewPosting.js" />
         <option value="$PROJECT_DIR$/src/component/blog/Todo.js" />
         <option value="$PROJECT_DIR$/src/component/blog/InProgress.js" />
-        <option value="$PROJECT_DIR$/src/component/blog/Done.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/component/Index.js" />
-        <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
+        <option value="$PROJECT_DIR$/src/component/blog/Done.js" />
         <option value="$PROJECT_DIR$/src/component/blog/BlogApproval.js" />
+        <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
+        <option value="$PROJECT_DIR$/src/component/blog/NewPosting.js" />
       </list>
     </option>
   </component>
@@ -186,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,7 +254,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,7 +384,8 @@
       <workItem from="1582074864489" duration="10368000" />
       <workItem from="1582160328836" duration="639000" />
       <workItem from="1582161728246" duration="9408000" />
-      <workItem from="1582507613767" duration="766000" />
+      <workItem from="1582507613767" duration="4079000" />
+      <workItem from="1582592084989" duration="2052000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -529,11 +555,25 @@
       <option name="project" value="LOCAL" />
       <updated>1582171211839</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add functionality to send notification for each approval progress update.">
+      <created>1582524459834</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1582524459834</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add paging in Approval Process Page.">
+      <created>1582534626160</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1582534626160</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301127000" />
+    <option name="totallyTimeSpent" value="306492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -582,16 +622,11 @@
     <MESSAGE value="add paging in blog list display." />
     <MESSAGE value="add nofitification functionality through websocket client." />
     <MESSAGE value="add notification popup." />
-    <option name="LAST_COMMIT_MESSAGE" value="add notification popup." />
+    <MESSAGE value="add functionality to send notification for each approval progress update." />
+    <MESSAGE value="Add paging in Approval Process Page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add paging in Approval Process Page." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/route/router-dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/dashboard/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -877,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/blog/NewPosting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="152" column="29" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/route/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -898,16 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="34" selection-start-line="22" selection-start-column="28" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3077">
-          <caret line="190" selection-start-line="190" selection-end-line="190" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,10 +960,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/blog/Done.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -957,7 +982,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/blog/InProgress.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
+        <state relative-caret-position="153">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -965,20 +990,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-js-pagination/src/components/Pagination.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="204" column="20" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="20" />
+        <state relative-caret-position="183">
+          <caret line="160" column="87" lean-forward="true" selection-start-line="160" selection-start-column="87" selection-end-line="160" selection-end-column="87" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
+    <entry file="file://$PROJECT_DIR$/src/component/blog/NewPosting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

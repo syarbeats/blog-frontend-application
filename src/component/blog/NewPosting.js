@@ -5,6 +5,7 @@ import ProxyServices from "../../Service/ProxyServices";
 import { EditorState, RichUtils, AtomicBlockUtils, convertFromRaw } from 'draft-js';
 import Editor from "draft-js-plugins-editor";
 import { mediaBlockRenderer } from "./MediaBlockrenderer";
+import Pagination from 'react-js-pagination';
 
 class NewPosting extends React.Component{
 
@@ -14,9 +15,19 @@ class NewPosting extends React.Component{
             blogs: [],
             keyword: '',
             editorState: EditorState.createEmpty(),
+            activePage: 1
         }
         this.onSearchChange = this.onSearchChange.bind(this);
         this.onSubmitSearch = this.onSubmitSearch.bind(this);
+        this.handlePageChange = this.handlePageChange.bind(this);
+        this.getTodayPosting = this.getTodayPosting.bind(this);
+    }
+
+    handlePageChange(pageNumber) {
+        console.log(`active page is ${pageNumber}`);
+        this.setState({activePage: pageNumber});
+        this.getTodayPosting(pageNumber);
+
     }
 
     onChange = (editorState) => {
@@ -49,15 +60,18 @@ class NewPosting extends React.Component{
     }
 
     componentDidMount() {
+        this.getTodayPosting(1);
+    }
 
-        ProxyServices.getTodayPosting()
+    getTodayPosting(pageNumber){
+        ProxyServices.getTodayPosting(pageNumber)
             .then(response => response.data)
             .then((json) => {
                 console.log("Response:", JSON.stringify(json));
                 this.setState({blogs: json});
                 console.log("BLOGS:", (this.state.blogs));
             }).catch(() => {
-            })
+        })
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -103,6 +117,17 @@ class NewPosting extends React.Component{
                     {console.log(this.state.blogs)}*/}
                     {this.state.blogs.map((data, i) => <BlogData key = {i} data = {data} editor={this.state.editorState} onChange={this.onEditorChange} blockRendererFn={mediaBlockRenderer} plugins={this.plugins} />)}
                     {console.log(this.state.blogs)}
+                </div>
+                <div className="row justify-content-md-center" style={{marginLeft:'30px', marginRight:'30px'}}>
+                    <Pagination
+                        activePage={this.state.activePage}
+                        itemsCountPerPage={10}
+                        totalItemsCount={450}
+                        pageRangeDisplayed={5}
+                        onChange={this.handlePageChange}
+                        itemClass="page-item"
+                        linkClass="page-link"
+                    />
                 </div>
             </div>
         );

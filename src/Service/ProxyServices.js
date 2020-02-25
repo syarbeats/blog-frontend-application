@@ -154,7 +154,7 @@ class ProxyServices {
         }
     }
 
-    getTodayPosting(){
+    getTodayPosting(pageNumber){
 
         let token = this.getToken();
         console.log("TOKEN SERVICE:", token);
@@ -162,7 +162,7 @@ class ProxyServices {
         console.log("Header:", axios.defaults.headers.common);
 
         /* return axios.get(`${API_URL}/services/blog/api/posts`);*/
-        return axios.get(`${API_URL2}/api/posts/today` );
+        return axios.get(`${API_URL2}/api/posts/today`+"?page="+(pageNumber-1)+"&size=6");
 
     }
 
