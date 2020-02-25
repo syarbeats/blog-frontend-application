@@ -156,21 +156,17 @@ class BlogData extends React.Component{
     render() {
 
         console.log("Child:",this.props.data.content);
-        //this.setState({ editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.data.content))) });
 
         let approvedBlog;
-
-        if(this.props.data.status){
-            approvedBlog = (
-                <div className="jumbotron" style={{height:'600px'}}>
-                    <h3>{this.props.data.title}</h3>
-                    <p className="lead">{this.props.data.summary}</p>
-                    <p className="lead">
-                        <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
-                    </p>
-                </div>
-            );
-        }
+        approvedBlog = (
+            <div className="jumbotron" style={{height:'600px'}}>
+                <h3>{this.props.data.title}</h3>
+                <p className="lead">{this.props.data.summary}</p>
+                <p className="lead">
+                    <a className="btn btn-primary btn-lg" href={"/blog?title=" + this.props.data.title} role="button">Read more</a>
+                </p>
+            </div>
+        );
 
 
         return(
