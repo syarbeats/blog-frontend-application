@@ -13,7 +13,8 @@ export class Reporting extends React.Component {
             statistic: [],
             approvalstatistic: [],
             blognumberpercategory: [],
-            rownum: 0
+            rownum: 0,
+            approvalresultstatistic: []
         }
 
         this.setReport = this.setReport.bind(this);
@@ -49,6 +50,14 @@ export class Reporting extends React.Component {
             }).catch(() =>{
 
         });
+
+        ProxyServices.getApprovalResultStatistic()
+            .then(response => response.data)
+            .then((json) => {
+                this.setState({approvalresultstatistic: json})
+            }).catch(() =>{
+
+        });
     }
 
     render() {
@@ -62,7 +71,8 @@ export class Reporting extends React.Component {
                             <div className="card-body">
                                 <div className="row align-content-center">
                                     <div className="col-md-6 align-content-center"><BlogCategories data={this.state.blognumberpercategory}/></div>
-                                    <div className="col-md-6 align-content-center"><ApprovalMonitoring data={this.state.approvalstatistic} /></div>
+                                    <div className="col-md-3 align-content-center"><ApprovalMonitoring data={this.state.approvalstatistic} /></div>
+                                    <div className="col-md-3 align-content-center"><ApprovalStatistic data={this.state.approvalresultstatistic} /></div>
                                 </div>
                             </div>
                         </div>
@@ -122,16 +132,38 @@ class BlogCategories extends React.Component{
 class ApprovalMonitoring extends React.Component{
     render() {
 
-        let microservices = 125;
-        let webapplication = 15;
-        let backend = 55;
+        const options = {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Approval Process"
+            },
+            data: [{
+                type: "pie",
+                indexLabel: "{label}: {y}%",
+                startAngle: -90,
+                dataPoints: this.props.data
+            }]
+        }
+
+        return (
+            <div>
+                <CanvasJSReact.CanvasJSChart options = {options}/>
+            </div>
+        );
+    }
+}
+
+class ApprovalStatistic extends React.Component{
+    render() {
 
         const options = {
             animationEnabled: true,
             exportEnabled: true,
             theme: "dark2",
             title:{
-                text: "Approval Statistic"
+                text: "Approval Result"
             },
             data: [{
                 type: "pie",

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06c7eaeb-4ec9-4df4-a427-010cbb6a4319" name="Default Changelist" comment="remove approved logic in new posting page, due to that logic moved to the backend.">
-      <change afterPath="$PROJECT_DIR$/src/component/reporting/Reporting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/canvasjs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/canvasjs.react.js" afterDir="false" />
+    <list default="true" id="06c7eaeb-4ec9-4df4-a427-010cbb6a4319" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProxyServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProxyServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HeaderMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HeaderMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/reporting/Reporting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/reporting/Reporting.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="239" column="59" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
+            <state relative-caret-position="225">
+              <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -58,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+            <state relative-caret-position="24">
+              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -136,6 +130,7 @@
       <find>Blog</find>
       <find>blogs</find>
       <find>sendNotification</find>
+      <find>approvalstatistic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,8 +188,8 @@
         <option value="$PROJECT_DIR$/src/component/blog/NewPosting.js" />
         <option value="$PROJECT_DIR$/src/route/router.js" />
         <option value="$PROJECT_DIR$/src/component/HeaderMenu.js" />
-        <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
         <option value="$PROJECT_DIR$/src/component/reporting/Reporting.js" />
+        <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
       </list>
     </option>
   </component>
@@ -407,7 +402,7 @@
       <workItem from="1582678424230" duration="2897000" />
       <workItem from="1582684969564" duration="3792000" />
       <workItem from="1582699648943" duration="4695000" />
-      <workItem from="1582765261691" duration="2397000" />
+      <workItem from="1582765261691" duration="5378000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -605,11 +600,25 @@
       <option name="project" value="LOCAL" />
       <updated>1582601327427</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add reporting for blog number per category.">
+      <created>1582775638112</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1582775638112</updated>
+    </task>
+    <task id="LOCAL-00030" summary="add reporting for blog approval statistic.">
+      <created>1582783667373</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1582783667373</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321721000" />
+    <option name="totallyTimeSpent" value="324702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -662,7 +671,9 @@
     <MESSAGE value="Add paging in Approval Process Page." />
     <MESSAGE value="Add paging in New Posting Page." />
     <MESSAGE value="remove approved logic in new posting page, due to that logic moved to the backend." />
-    <option name="LAST_COMMIT_MESSAGE" value="remove approved logic in new posting page, due to that logic moved to the backend." />
+    <MESSAGE value="add reporting for blog number per category." />
+    <MESSAGE value="add reporting for blog approval statistic." />
+    <option name="LAST_COMMIT_MESSAGE" value="add reporting for blog approval statistic." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/img/mitrais.PNG">
@@ -1050,22 +1061,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
+    <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="239" column="59" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
+        <state relative-caret-position="24">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
+    <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+        <state relative-caret-position="225">
+          <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

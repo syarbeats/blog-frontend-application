@@ -249,6 +249,15 @@ class ProxyServices {
         return axios.get(`${API_URL_APPROVAL}/api/approval-statistic` );
     }
 
+    getApprovalResultStatistic(){
+        let token = this.getToken();
+        //console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL_APPROVAL}/api/approval-result-statistic` );
+    }
+
 }
 
 export default new ProxyServices()
