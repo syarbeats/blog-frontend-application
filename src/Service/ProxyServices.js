@@ -5,6 +5,7 @@ import React from "react";
 const API_URL = 'http://localhost:8090';
 const API_URL2 = 'http://localhost:8081';
 const API_URL_APPROVAL = 'http://localhost:8087';
+const API_URL_REPORT = 'http://localhost:8089';
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 export const PASSWORD_SESSION_ATTRIBUTE_NAME = 'password'
@@ -212,6 +213,31 @@ class ProxyServices {
         if(message){
             return axios.get(`${API_URL_APPROVAL}/send/message?message=${message}`);
         }
+    }
+
+    getStatistic(){
+        let token = this.getToken();
+        //console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL_REPORT}/api/statistic` );
+    }
+
+    getBlogNumberPerCategory(){
+        let token = this.getToken();
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL2}/api/posts/report` );
+    }
+
+    getBlogNumber(){
+        let token = this.getToken();
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL2}/api/posts/blog-rownum` );
     }
 
 }
