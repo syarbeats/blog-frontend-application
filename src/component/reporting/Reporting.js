@@ -41,6 +41,14 @@ export class Reporting extends React.Component {
             }).catch(() =>{
 
             });
+
+        ProxyServices.getApprovalStatistic()
+            .then(response => response.data)
+            .then((json) => {
+                this.setState({approvalstatistic: json})
+            }).catch(() =>{
+
+        });
     }
 
     render() {
@@ -54,7 +62,7 @@ export class Reporting extends React.Component {
                             <div className="card-body">
                                 <div className="row align-content-center">
                                     <div className="col-md-6 align-content-center"><BlogCategories data={this.state.blognumberpercategory}/></div>
-                                    <div className="col-md-6 align-content-center"><ApprovalMonitoring /></div>
+                                    <div className="col-md-6 align-content-center"><ApprovalMonitoring data={this.state.approvalstatistic} /></div>
                                 </div>
                             </div>
                         </div>
@@ -129,11 +137,7 @@ class ApprovalMonitoring extends React.Component{
                 type: "pie",
                 indexLabel: "{label}: {y}%",
                 startAngle: -90,
-                dataPoints: [
-                    { y: ((microservices)/195)*100, label: "Microservices" },
-                    { y: ((webapplication)/195)*100, label: "Web Application" },
-                    { y: ((backend)/195)*100, label: "Backend" }
-                ]
+                dataPoints: this.props.data
             }]
         }
 
