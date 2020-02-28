@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="06c7eaeb-4ec9-4df4-a427-010cbb6a4319" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProxyServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProxyServices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/reporting/Reporting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/reporting/Reporting.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="156" column="23" selection-start-line="152" selection-start-column="16" selection-end-line="159" selection-end-column="22" />
+            <state relative-caret-position="-13">
+              <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
+            <state relative-caret-position="4335">
+              <caret line="257" column="75" selection-start-line="257" selection-start-column="75" selection-end-line="257" selection-end-column="75" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="-1088">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -188,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/component/blog/NewPosting.js" />
         <option value="$PROJECT_DIR$/src/route/router.js" />
         <option value="$PROJECT_DIR$/src/component/HeaderMenu.js" />
-        <option value="$PROJECT_DIR$/src/component/reporting/Reporting.js" />
         <option value="$PROJECT_DIR$/src/Service/ProxyServices.js" />
+        <option value="$PROJECT_DIR$/src/component/reporting/Reporting.js" />
       </list>
     </option>
   </component>
@@ -402,7 +401,8 @@
       <workItem from="1582678424230" duration="2897000" />
       <workItem from="1582684969564" duration="3792000" />
       <workItem from="1582699648943" duration="4695000" />
-      <workItem from="1582765261691" duration="5378000" />
+      <workItem from="1582765261691" duration="6740000" />
+      <workItem from="1582850556133" duration="2464000" />
     </task>
     <task id="LOCAL-00001" summary="Modify header menu position and add Category menu.">
       <created>1567044813096</created>
@@ -614,11 +614,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582783667373</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="add reporting for blog approval result statistic.">
+      <created>1582787458475</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1582787458475</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324702000" />
+    <option name="totallyTimeSpent" value="328528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -648,7 +655,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modify header menu position and add Category menu." />
     <MESSAGE value="Add Create Blog Layout" />
     <MESSAGE value="Retrieve blog data from backend and display it on Home Page." />
     <MESSAGE value="Add functionality to submit blog to backend." />
@@ -673,7 +679,8 @@
     <MESSAGE value="remove approved logic in new posting page, due to that logic moved to the backend." />
     <MESSAGE value="add reporting for blog number per category." />
     <MESSAGE value="add reporting for blog approval statistic." />
-    <option name="LAST_COMMIT_MESSAGE" value="add reporting for blog approval statistic." />
+    <MESSAGE value="add reporting for blog approval result statistic." />
+    <option name="LAST_COMMIT_MESSAGE" value="add reporting for blog approval result statistic." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/img/mitrais.PNG">
@@ -1012,12 +1019,12 @@
     <entry file="file://$PROJECT_DIR$/src/library/canvasjs.react.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
+    <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="156" column="23" selection-start-line="152" selection-start-column="16" selection-end-line="159" selection-end-column="22" />
+        <state relative-caret-position="4335">
+          <caret line="257" column="75" selection-start-line="257" selection-start-column="75" selection-end-line="257" selection-end-column="75" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1061,22 +1068,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
+    <entry file="file://$PROJECT_DIR$/src/component/blog/BlogApproval.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="-13">
+          <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/ProxyServices.js">
+    <entry file="file://$PROJECT_DIR$/src/component/reporting/Reporting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
+        <state relative-caret-position="-1088">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

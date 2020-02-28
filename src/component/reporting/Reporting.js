@@ -22,7 +22,7 @@ export class Reporting extends React.Component {
 
     setReport = function(message){
         console.log("Message from stomp:", message);
-        this.setState({approvalstatistic: message});
+        this.setState({blognumberpercategory: message});
     }
 
 
