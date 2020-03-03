@@ -50,11 +50,10 @@ This is the simple blog application developed by using ReactJS as frontend frame
 
 <img width="375" alt="Comment" src="https://user-images.githubusercontent.com/18225438/64319951-b1451380-cfe7-11e9-8b8a-d98e5fbbe9b4.PNG">
 
-#### Dashboard
+#### Blog-Dashboard
 <img width="938" alt="dashboard-blog" src="https://user-images.githubusercontent.com/18225438/75739742-4aa37700-5d38-11ea-9b65-cab73938649b.PNG">
 
-#### Blog Approval
+#### Blog-Approval
 <img width="942" alt="Blog Approval" src="https://user-images.githubusercontent.com/18225438/75739842-9524f380-5d38-11ea-8fec-5503627259b0.PNG">
-
 
 
