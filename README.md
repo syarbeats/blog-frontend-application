@@ -6,6 +6,7 @@ This is the simple blog application developed by using ReactJS as frontend frame
 2. DraftJS
 3. CoreUI
 4. Axios
+6. Websocket
 5. etc.
 
 ## Architecture
