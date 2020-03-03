@@ -232,6 +232,14 @@ class ProxyServices {
         return axios.get(`${API_URL2}/api/posts/report` );
     }
 
+    getBlogNumberPerCategoryV2(){
+        let token = this.getToken();
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL2}/api/posts/report-v2` );
+    }
+
     getBlogNumber(){
         let token = this.getToken();
         axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
@@ -256,6 +264,24 @@ class ProxyServices {
         console.log("Header:", axios.defaults.headers.common);
 
         return axios.get(`${API_URL_APPROVAL}/api/approval-result-statistic` );
+    }
+
+    getApprovalResultStatisticV2(){
+        let token = this.getToken();
+        //console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL_APPROVAL}/api/approval-result-statistic-v2` );
+    }
+
+    getApprovalStatisticV2(){
+        let token = this.getToken();
+        //console.log("TOKEN SERVICE:", token);
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.getToken()}`};
+        console.log("Header:", axios.defaults.headers.common);
+
+        return axios.get(`${API_URL_APPROVAL}/api/approval-statistic-v2` );
     }
 
 }

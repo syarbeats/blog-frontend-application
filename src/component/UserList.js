@@ -21,7 +21,9 @@ class UserList extends React.Component{
             .then((json)=>{
                 console.log("Response User List:", JSON.stringify(json.data.data));
                 this.setState({users: json.data.data})
-            });
+            }).catch((error)=>{
+                console.log("Error:", error);
+        });
     }
 
     render() {
